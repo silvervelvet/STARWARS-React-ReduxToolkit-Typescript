@@ -1,6 +1,15 @@
 import styles from './PersonInfo.module.css';
 
-const PersonInfo = ({ personInfo }) => {
+interface PersonInfoData {
+  title: string;
+  data: string;
+}
+
+interface PersonInfoProps {
+  personInfo: PersonInfoData[];
+}
+
+const PersonInfo: React.FC<PersonInfoProps> = ({ personInfo }) => {
   return (
     <>
       <ul className={styles.list__container}>

@@ -4,8 +4,17 @@ import { useState, useEffect } from 'react';
 
 import { makeConcurrentRequest } from '../../../utils/networkRequest';
 
-const PersonFilms = ({ personFilms }) => {
-  const [films, setFilms] = useState([]);
+interface Film {
+  title: string;
+  episode_id: number;
+}
+
+interface PersonFilmsProps {
+  personFilms: string[];
+}
+
+const PersonFilms: React.FC<PersonFilmsProps> = ({ personFilms }) => {
+  const [films, setFilms] = useState<Film[]>([]);
 
   useEffect(() => {
     (async () => {
