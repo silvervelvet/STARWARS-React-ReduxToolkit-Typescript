@@ -2,7 +2,17 @@ import styles from './PeopleList.module.css';
 
 import { Link } from 'react-router-dom';
 
-const PeopleList = ({ people }) => {
+interface Person {
+  id: string;
+  name: string;
+  img: string;
+}
+
+interface PeopleListProps {
+  people: Person[];
+}
+
+const PeopleList: React.FC<PeopleListProps> = ({ people }) => {
   return (
     <ul className={styles.list__container}>
       {people.map(({ id, name, img }) => (
