@@ -1,2 +1,2 @@
-import { PersonPage } from './PersonPage'
+import PersonPage from './PersonPage'
 export default PersonPage
