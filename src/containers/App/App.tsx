@@ -2,7 +2,7 @@ import styles from './App.module.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// import Header from '../../components/Header';
+import Header from '../../components/Header';
 import HomePage from '../HomePage';
 import PeoplePage from '../PeoplePage';
 import PersonPage from '../PersonPage';

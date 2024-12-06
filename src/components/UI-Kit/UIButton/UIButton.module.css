@@ -1,0 +1,19 @@
+.button:disabled,
+.button:disabled:hover {
+  cursor: auto;
+}
+
+.dark {
+  border: 1px solid ;
+}
+.dark:hover {
+  color: black;
+}
+
+.light {
+  border: 1px solid black;
+  color: black;
+}
+.light:hover {
+  color: red;
+}
