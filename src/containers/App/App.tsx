@@ -8,10 +8,12 @@ import PeoplePage from '../PeoplePage';
 import PersonPage from '../PersonPage/PersonPage';
 import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
+import ThemeToggleButton from '../../context/ThemeToggleButton';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <ThemeToggleButton />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
