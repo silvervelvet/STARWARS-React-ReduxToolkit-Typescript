@@ -5,10 +5,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../../components/Header';
 import HomePage from '../HomePage';
 import PeoplePage from '../PeoplePage';
-import PersonPage from '../PersonPage/PersonPage';
+import PersonPage from '../PersonPage';
 import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
 import ThemeToggleButton from '../../context/ThemeToggleButton';
+import SearchPage from '../SearchPage';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/people" element={<PeoplePage />} />
         <Route path="/people/:id" element={<PersonPage />} />
         <Route path="/favourite" element={<FavouritePage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="*" element={<ErrorNotFound />} />
       </Routes>
     </BrowserRouter>
