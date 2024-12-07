@@ -1,5 +1,4 @@
 import styles from './PersonPage.module.css';
-
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -40,32 +39,33 @@ const PersonPage: React.FC = () => {
   useEffect(() => {
     if (id) {
       (async () => {
-        const res: PersonApiResponse = await getApiRequest(
-          `${API_PERSON}/${id}/`
-        );
+        const res = await getApiRequest(`${API_PERSON}/${id}/`);
 
-        setPersonInfo([
-          { title: 'Height', data: res.height },
-          { title: 'Mass', data: res.mass },
-          { title: 'Hair Color', data: res.hair_color },
-          { title: 'Skin Color', data: res.skin_color },
-          { title: 'Eye Color', data: res.eye_color },
-          { title: 'Birth Year', data: res.birth_year },
-          { title: 'Gender', data: res.gender },
-        ]);
-        setPersonImg(getPeopleImage(id));
-        setPersonName(res.name);
-        setPersonFilms(res.films);
-        setPersonId(res.url);
+        if ('name' in res) {
+          const personData = res as PersonApiResponse;
+          setPersonInfo([
+            { title: 'Height', data: personData.height },
+            { title: 'Mass', data: personData.mass },
+            { title: 'Hair Color', data: personData.hair_color },
+            { title: 'Skin Color', data: personData.skin_color },
+            { title: 'Eye Color', data: personData.eye_color },
+            { title: 'Birth Year', data: personData.birth_year },
+            { title: 'Gender', data: personData.gender },
+          ]);
+          setPersonImg(getPeopleImage(id));
+          setPersonName(personData.name);
+          setPersonFilms(personData.films);
+          setPersonId(personData.url);
+        } else {
+          console.error('Unexpected response format');
+        }
       })();
     }
   }, [id]);
 
   if (personId === null || personImg === null || personName === null) {
-    return <div>Sorry</div>;
+    return <div>Sorry, we couldn't find the person.</div>;
   }
-
-  console.log(personImg);
 
   return (
     <>
