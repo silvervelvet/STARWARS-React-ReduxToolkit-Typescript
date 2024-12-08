@@ -30,6 +30,7 @@ ul, ol {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -43,8 +44,8 @@ input {
   background: none;
   outline: none;
 }
-
+/* 
 img {
   max-width: 100%;
   height: auto;
-}
+} */
