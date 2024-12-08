@@ -23,6 +23,9 @@ const Header = () => {
           <Link to="/search">Search</Link>
         </li>
         <li>
+          <Link to="/favourite">Favourite People</Link>
+        </li>
+        <li>
           <Link to="*">404</Link>
         </li>
       </ul>
