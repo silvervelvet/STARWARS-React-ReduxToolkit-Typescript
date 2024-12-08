@@ -13,6 +13,15 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #ffffff;
+}
+
+body.dark {
+  background-color: #121212;
 }
 
 ul, ol {
