@@ -18,14 +18,9 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
+  const [theme, setTheme] = useState<'light' | 'dark'>(savedTheme || 'dark');
 
   useEffect(() => {
     document.body.className = theme;
