@@ -10,6 +10,7 @@ import starwarslogo from './img/sw_logo_light.png';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import classNames from 'classnames';
+import ThemeToggleButton from '../../context/ThemeToggleButton';
 
 const Header = () => {
   const { theme } = useTheme();
@@ -159,6 +160,7 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+        <ThemeToggleButton />
       </section>
     </header>
   );
