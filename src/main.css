@@ -1,3 +1,8 @@
+:root {
+  --color-red-darkTheme: #c53513;
+  --color-green-lightTheme: #4f6112;
+}
+
 *,
 *::before,
 *::after {
