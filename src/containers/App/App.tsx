@@ -14,16 +14,18 @@ import SearchPage from '../SearchPage';
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <ThemeToggleButton />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/people" element={<PeoplePage />} />
-        <Route path="/people/:id" element={<PersonPage />} />
-        <Route path="/favourite" element={<FavouritePage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="*" element={<ErrorNotFound />} />
-      </Routes>
+      <div className={styles.wrapper}>
+        <ThemeToggleButton />
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/people/:id" element={<PersonPage />} />
+          <Route path="/favourite" element={<FavouritePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="*" element={<ErrorNotFound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
