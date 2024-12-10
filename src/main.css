@@ -23,10 +23,12 @@ body {
 
 body.light {
   background-color: #ffffff;
+  --color-green-lightTheme: #4f6112;
 }
 
 body.dark {
   background-color: #121212;
+  --color-red-darkTheme: #c53513;
 }
 
 ul, ol {

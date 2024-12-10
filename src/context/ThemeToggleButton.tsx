@@ -1,6 +1,6 @@
 import styles from './ThemeToggleButton.module.css';
-import iconDarkTheme from './img/death-star.png';
-import iconLightTheme from './img/jedi.png';
+import iconDarkTheme from './img/death-star_darkTheme.png';
+import iconLightTheme from './img/jedi_lightTheme.png';
 
 import classNames from 'classnames';
 
@@ -11,7 +11,7 @@ const ThemeToggleButton: React.FC = () => {
 
   return (
     <section>
-      <div>Choose your side</div>
+      {/* <div>Choose your side</div> */}
       <img
         className={styles.icon_toggleTheme}
         src={theme === 'light' ? iconLightTheme : iconDarkTheme}

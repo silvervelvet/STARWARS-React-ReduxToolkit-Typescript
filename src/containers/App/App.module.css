@@ -1,3 +1,11 @@
 .wrapper {
-  padding: 3rem 0rem;
+  padding: 1.5rem 0rem;
+}
+
+.border_bottomDark {
+  border-bottom: 1px solid #fff;
+}
+
+.border_bottomLight {
+  border-bottom: 1px solid #000;
 }
