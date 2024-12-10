@@ -14,10 +14,19 @@ import iconKidsDarkTheme from './img/icon_kids_darkTheme.png';
 import logoSWLightTheme from './img/sw_light_logo.png';
 import logoSWDarkTheme from './img/sw_dark_logo.png';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import classNames from 'classnames';
 import ThemeToggleButton from '../../context/ThemeToggleButton';
+
+const getLinkClassNames = (isActive, theme) => {
+  return classNames(styles.title, {
+    [styles.titleDark]: theme === 'dark',
+    [styles.titleLight]: theme === 'light',
+    [styles.titleLight_active]: isActive && theme === 'light',
+    [styles.titleDark_active]: isActive && theme === 'dark',
+  });
+};
 
 const Header = () => {
   const { theme } = useTheme();
@@ -123,59 +132,44 @@ const Header = () => {
       <section className={styles.navigation}>
         <ul className={styles.navigation_list}>
           <li>
-            <Link
+            <NavLink
               to="/"
-              className={classNames(styles.title, {
-                [styles.titleDark]: theme === 'dark',
-                [styles.titleLight]: theme === 'light',
-              })}
+              className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/people"
-              className={classNames(styles.title, {
-                [styles.titleDark]: theme === 'dark',
-                [styles.titleLight]: theme === 'light',
-              })}
+              className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
               People
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/search"
-              className={classNames(styles.title, {
-                [styles.titleDark]: theme === 'dark',
-                [styles.titleLight]: theme === 'light',
-              })}
+              className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
               Search
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/favourite"
-              className={classNames(styles.title, {
-                [styles.titleDark]: theme === 'dark',
-                [styles.titleLight]: theme === 'light',
-              })}
+              className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
               Favourite People
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="*"
-              className={classNames(styles.title, {
-                [styles.titleDark]: theme === 'dark',
-                [styles.titleLight]: theme === 'light',
-              })}
+              className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
               404
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className={styles.themeToggleButton}>
