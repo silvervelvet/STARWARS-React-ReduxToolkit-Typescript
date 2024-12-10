@@ -68,11 +68,11 @@ header {
   color: #a9a9a9;
 }
 
-.titleLight:hover, .titleLight:focus {
+.titleLight:hover, .titleLight:focus, .titleLight_active {
   color: var(--color-green-lightTheme);
 }
 
-.titleDark:hover, .titleDark:focus {
+.titleDark:hover, .titleDark:focus, .titleDark_active {
   color: var(--color-red-darkTheme);
 }
 
