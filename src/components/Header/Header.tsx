@@ -1,11 +1,18 @@
 import styles from './Header.module.css';
-import iconTikTok from './img/tiktok.png';
-import iconInstagram from './img/instagram.png';
-import iconTwitter from './img/twitter.png';
-import iconFacebook from './img/facebook.png';
-import iconYoutube from './img/youtube.png';
-import iconKids from './img/icon_kids.svg';
-import starwarslogo from './img/sw_logo_light.png';
+import iconTikTokLightTheme from './img/tiktok_lightTheme.png';
+import iconTikTokDarkTheme from './img/tiktok_darkTheme.png';
+import iconInstLightTheme from './img/instagram_lightTheme.png';
+import iconInstDarkTheme from './img/instagram_darkTheme.png';
+import iconTwitterLightTheme from './img/twitter_lightTheme.png';
+import iconTwitterDarkTheme from './img/twitter_darkTheme.png';
+import iconFacebookLightTheme from './img/facebook_lightTheme.png';
+import iconFacebookDarkTheme from './img/facebook_darkTheme.png';
+import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
+import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
+import iconKidsLightTheme from './img/icon_kids_lightTheme.png';
+import iconKidsDarkTheme from './img/icon_kids_darkTheme.png';
+import logoSWLightTheme from './img/sw_light_logo.png';
+import logoSWDarkTheme from './img/sw_dark_logo.png';
 
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
@@ -16,11 +23,7 @@ const Header = () => {
   const { theme } = useTheme();
 
   return (
-    <header
-      className={
-        theme === 'dark' ? styles.border_bottomDark : styles.border_bottomLight
-      }
-    >
+    <header>
       <section className={styles.top_header}>
         <ul className={styles.social_media_list}>
           <li className={styles.social_media_item}>
@@ -29,7 +32,9 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconTikTok}
+                src={
+                  theme === 'light' ? iconTikTokLightTheme : iconTikTokDarkTheme
+                }
                 alt="socal-media-TikTok"
                 className={styles.social_media_img}
               ></img>
@@ -41,7 +46,7 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconInstagram}
+                src={theme === 'light' ? iconInstLightTheme : iconInstDarkTheme}
                 alt="socal-media-instagram"
                 className={styles.social_media_img}
               ></img>
@@ -53,7 +58,11 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconTwitter}
+                src={
+                  theme === 'light'
+                    ? iconTwitterLightTheme
+                    : iconTwitterDarkTheme
+                }
                 alt="socal-media-twitter"
                 className={styles.social_media_img}
               ></img>
@@ -65,7 +74,11 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconFacebook}
+                src={
+                  theme === 'light'
+                    ? iconFacebookLightTheme
+                    : iconFacebookDarkTheme
+                }
                 alt="socal-media-facebook"
                 className={styles.social_media_img}
               ></img>
@@ -77,7 +90,11 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconYoutube}
+                src={
+                  theme === 'light'
+                    ? iconYoutubeLightTheme
+                    : iconYoutubeDarkTheme
+                }
                 alt="socal-media-youtube"
                 className={styles.social_media_img}
               ></img>
@@ -89,7 +106,7 @@ const Header = () => {
               className={styles.social_media_link}
             >
               <img
-                src={iconKids}
+                src={theme === 'light' ? iconKidsLightTheme : iconKidsDarkTheme}
                 alt="socal-media-kids"
                 className={styles.social_media_img}
               ></img>
@@ -97,10 +114,11 @@ const Header = () => {
           </li>
         </ul>
         <img
-          src={starwarslogo}
+          src={theme === 'light' ? logoSWLightTheme : logoSWDarkTheme}
           className={styles.logo}
           alt="star-wars-logo"
         ></img>
+        <div className={styles.log}>Log In</div>
       </section>
       <section className={styles.navigation}>
         <ul className={styles.navigation_list}>
@@ -160,7 +178,9 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <ThemeToggleButton />
+        <div className={styles.themeToggleButton}>
+          <ThemeToggleButton />
+        </div>
       </section>
     </header>
   );
