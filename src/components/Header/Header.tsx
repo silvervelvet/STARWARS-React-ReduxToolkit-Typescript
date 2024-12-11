@@ -14,6 +14,8 @@ import iconKidsDarkTheme from './img/icon_kids_darkTheme.png';
 import logoSWLightTheme from './img/sw_light_logo.png';
 import logoSWDarkTheme from './img/sw_dark_logo.png';
 
+import SearchIcon from '@mui/icons-material/Search';
+
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import classNames from 'classnames';
@@ -147,12 +149,15 @@ const Header = () => {
               People
             </NavLink>
           </li>
-          <li>
+          <li className={styles.navigation_item}>
             <NavLink
               to="/search"
               className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
-              Search
+              <div className={styles.iconTextWrapper}>
+                <SearchIcon fontSize="large" />
+                <span>Search</span>
+              </div>
             </NavLink>
           </li>
           <li>
