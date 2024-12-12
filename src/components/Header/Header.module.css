@@ -1,7 +1,7 @@
 header {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .top_header {
@@ -30,7 +30,7 @@ header {
 }
 
 .social_media_img {
-  max-width: 2rem;
+  max-width: 1.7rem;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
