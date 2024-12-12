@@ -1,6 +1,7 @@
-import styles from './PeopleNavigation.module.css';
-
+import { useTheme } from '../../../context/ThemeContext';
 import UIButton from '../../UI-Kit/UIButton';
+
+import styles from './PeopleNavigation.module.css';
 
 interface PeopleNavigationProps {
   onPrevious: () => void;
@@ -15,10 +16,32 @@ const PeopleNavigation: React.FC<PeopleNavigationProps> = ({
   switchBack,
   switchNext,
 }) => {
+  const { theme } = useTheme();
+
   return (
-    <div>
-      <UIButton text={'Previous'} onClick={onPrevious} disabled={!switchBack} />
-      <UIButton text={'Next'} onClick={onNext} disabled={!switchNext} />
+    <div className={styles.button_container}>
+      <UIButton
+        text={'Previous'}
+        onClick={onPrevious}
+        disabled={!switchBack}
+        theme={theme}
+        classes={
+          theme === 'light'
+            ? styles.peopleNavigationLightButton
+            : styles.peopleNavigationDarkButton
+        }
+      />
+      <UIButton
+        text={'Next'}
+        onClick={onNext}
+        disabled={!switchNext}
+        theme={theme}
+        classes={
+          theme === 'light'
+            ? styles.peopleNavigationLightButton
+            : styles.peopleNavigationDarkButton
+        }
+      />
     </div>
   );
 };
