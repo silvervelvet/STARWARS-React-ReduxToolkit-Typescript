@@ -1,0 +1,6 @@
+.peopleContainer {
+  padding: 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
