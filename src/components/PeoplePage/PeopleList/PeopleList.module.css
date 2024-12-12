@@ -1,0 +1,45 @@
+.list_container {
+  display: flex;
+  gap: 1rem;
+  row-gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.list_item {
+  cursor: pointer;
+  width: 19rem;
+  transition: transform 0.3s ease;
+}
+
+.list_item:hover {
+  transform: scale(1.05);
+}
+
+.person_photo {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.personNameLight:hover, .personNameLight:focus {
+  color: var(--color-green-lightTheme);
+}
+
+.personNameDark:hover, .personNameDark:focus{
+  color: var(--color-red-darkTheme);
+}
+
+.personName {
+  color: #a9a9a9;
+  text-align: center;
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* .list_item:hover .personName {
+  color: inherit;
+} */

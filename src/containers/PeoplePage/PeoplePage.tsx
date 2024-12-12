@@ -3,11 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PeopleNavigation from '../../components/PeoplePage/PeopleNavigation';
 import PeopleList from '../../components/PeoplePage/PeopleList';
-import {
-  PeopleApiResponse,
-  getApiRequest,
-  PersonApiResponse,
-} from '../../utils/networkRequest';
+import { getApiRequest } from '../../utils/networkRequest';
 import { API_PEOPLE } from '../../constants/constants';
 import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
 
@@ -62,7 +58,7 @@ const PeoplePage: React.FC = () => {
   };
 
   return (
-    <>
+    <section className={styles.peopleContainer}>
       <PeopleNavigation
         onPrevious={() => switchPage(prevPage)}
         onNext={() => switchPage(nextPage)}
@@ -70,7 +66,7 @@ const PeoplePage: React.FC = () => {
         switchNext={!!nextPage}
       />
       {people && <PeopleList people={people} />}
-    </>
+    </section>
   );
 };
 
