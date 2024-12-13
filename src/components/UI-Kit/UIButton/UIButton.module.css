@@ -1,6 +1,6 @@
 .button {
-  min-width: 15rem;
-  padding: 0.5rem;
+  max-width: 19rem;
+  padding: 0.5rem 2rem;
   border-radius: 1rem;
   border:#a9a9a9 solid 2px;
   font-family: 'Nunito Sans', serif;
