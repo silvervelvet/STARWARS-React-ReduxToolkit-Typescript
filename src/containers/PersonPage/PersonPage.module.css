@@ -1,0 +1,26 @@
+.person_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.linkBackLightButton,
+.linkBackDarkButton {
+  text-decoration: underline;
+  background-color: none;
+  border: 2px solid transparent;
+}
+
+.linkBackLightButton:hover,
+.linkBackLightButton:active {
+  font-weight: 600;
+  background-color: white;
+  color: var(--color-green-lightTheme);
+}
+
+.linkBackDarkButton:hover,
+.linkBackDarkButton:active {
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--color-red-darkTheme);
+}

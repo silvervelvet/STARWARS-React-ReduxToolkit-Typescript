@@ -4,8 +4,7 @@ import cn from 'classnames';
 
 interface UIButtonProps {
   text: string;
-  onClick: () => void;
-  disabled: boolean;
+  onClick: (e: React.MouseEvent<HTMLElement>) => void;  disabled: boolean;
   theme?: 'light' | 'dark';
   classes?: string;
 }
