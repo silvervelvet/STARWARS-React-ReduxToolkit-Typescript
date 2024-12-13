@@ -10,6 +10,7 @@ import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
 import ThemeToggleButton from '../../context/ThemeToggleButton';
 import SearchPage from '../SearchPage';
+import Footer from '../../components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="*" element={<ErrorNotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
