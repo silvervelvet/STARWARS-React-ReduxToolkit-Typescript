@@ -1,14 +1,58 @@
-.person_container {
+.wrapper {
+  padding-top: 2rem;
+}
+
+.person_card {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   gap: 2rem;
+  background-color: #ffff;
+  max-width: 90rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.person_cardLightTheme {
+  border: var(--color-lightGreen-lightTheme) solid 2px;
+  border-radius: 1rem;
+}
+
+.person_cardDarkTheme {
+  border: var(--color-red-darkTheme) solid 2px;
+  border-radius: 1rem;
+}
+
+.person_content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.title_person {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.title_personLightTheme {
+  color: var(--color-green-lightTheme);
+}
+
+.title_personDarkTheme {
+  color: var(--color-red-darkTheme);
 }
 
 .linkBackLightButton,
 .linkBackDarkButton {
+  margin-left: 10rem;
+  padding: 0;
+  width: auto;
+  display: inline-flex;
   text-decoration: underline;
   background-color: none;
-  border: 2px solid transparent;
+  border: none;
 }
 
 .linkBackLightButton:hover,
@@ -23,4 +67,10 @@
   font-weight: 600;
   background-color: transparent;
   color: var(--color-red-darkTheme);
+}
+
+.person_description {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }

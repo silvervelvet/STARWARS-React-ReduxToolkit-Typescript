@@ -1,9 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
 import styles from './PersonImg.module.css';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { addPerson, removePerson } from '../../../store/slice';
 import { PersonImgProps } from '../../../containers/PersonPage/PersonPage';
-import UIButton from '../../UI-Kit/UIButton/UIButton';
-import { useTheme } from '../../../context/ThemeContext';
+
+import iconFavorite from './img/favorite.svg';
+import iconFavoriteFill from './img/favorite-fill.svg';
 
 const PersonImg: React.FC<PersonImgProps> = ({
   personId,
@@ -15,7 +17,6 @@ const PersonImg: React.FC<PersonImgProps> = ({
     (state: { favourites: { favoriteIds: string[] } }) =>
       state.favourites.favoriteIds
   );
-  const { theme } = useTheme();
 
   const isFavourite = favourites.includes(personId);
 
@@ -28,20 +29,15 @@ const PersonImg: React.FC<PersonImgProps> = ({
   };
 
   return (
-    <>
-      <img src={personImg} alt={personName} />
-      <UIButton
-        text={isFavourite ? 'Remove from Favourite' : 'Add to Favourite'}
+    <section className={styles.img_container}>
+      <img className={styles.personImage} src={personImg} alt={personName} />
+      <img
+        src={isFavourite ? iconFavoriteFill : iconFavorite}
         onClick={handleToggleFavourite}
-        disabled={false}
-        theme={theme}
-        classes={
-          theme === 'light'
-            ? styles.linkBackLightButton
-            : styles.linkBackDarkButton
-        }
+        className={styles.iconFavorite}
+        alt={isFavourite ? 'iconFavoriteFill' : 'iconFavorite'}
       />
-    </>
+    </section>
   );
 };
 

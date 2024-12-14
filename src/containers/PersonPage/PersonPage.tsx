@@ -14,6 +14,7 @@ import UIButton from '../../components/UI-Kit/UIButton/UIButton';
 import { useTheme } from '../../context/ThemeContext';
 
 import styles from './PersonPage.module.css';
+import classNames from 'classnames';
 
 const PersonFilms = React.lazy(
   () => import('../../components/PersonPage/PersonFilms')
@@ -78,7 +79,7 @@ const PersonPage: React.FC = () => {
   };
 
   return (
-    <section className={styles.person_container}>
+    <section className={styles.wrapper}>
       <UIButton
         text={'Go back'}
         onClick={handleGoBack}
@@ -90,18 +91,36 @@ const PersonPage: React.FC = () => {
             : styles.linkBackDarkButton
         }
       />
-      <span>{personName}</span>
-      <PersonImg
-        personId={personId}
-        personImg={personImg}
-        personName={personName}
-      />
-      <PersonInfo personInfo={personInfo} />
-      {personFilms && (
-        <Suspense fallback={<UiLoading />}>
-          <PersonFilms personFilms={personFilms} />
-        </Suspense>
-      )}
+      <main
+        className={classNames(styles.person_card, {
+          [styles.person_cardLightTheme]: theme === 'light',
+          [styles.person_cardDarkTheme]: theme === 'dark',
+        })}
+      >
+        <div
+          className={classNames(styles.title_person, {
+            [styles.title_personLightTheme]: theme === 'light',
+            [styles.title_personDarkTheme]: theme === 'dark',
+          })}
+        >
+          {personName}
+        </div>
+        <div className={styles.person_content}>
+          <PersonImg
+            personId={personId}
+            personImg={personImg}
+            personName={personName}
+          />
+          <div className={styles.person_description}>
+            <PersonInfo personInfo={personInfo} />
+            {personFilms && (
+              <Suspense fallback={<UiLoading />}>
+                <PersonFilms personFilms={personFilms} />
+              </Suspense>
+            )}
+          </div>
+        </div>
+      </main>
     </section>
   );
 };

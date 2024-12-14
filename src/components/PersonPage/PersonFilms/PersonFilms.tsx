@@ -31,8 +31,10 @@ const PersonFilms: React.FC<PersonFilmsProps> = ({ personFilms }) => {
           .sort((a, b) => a.episode_id - b.episode_id)
           .map(({ title, episode_id }) => (
             <li className={styles.list__item} key={episode_id}>
-              <span className={styles.item__episide}>Episode {episode_id}</span>
-              <span className={styles.item__colon}> : </span>
+              <span className={styles.item__episide}>
+                Episode {episode_id}{' '}
+              </span>
+              <span> : </span>
               <span className={styles.item__title}>{title}</span>
             </li>
           ))}
