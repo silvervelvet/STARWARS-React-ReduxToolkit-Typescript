@@ -9,6 +9,7 @@
   text-transform: uppercase;
   background: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .button:disabled,

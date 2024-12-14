@@ -11,7 +11,7 @@ interface PersonInfoProps {
 
 const PersonInfo: React.FC<PersonInfoProps> = ({ personInfo }) => {
   return (
-    <>
+    <section>
       <ul className={styles.list__container}>
         {personInfo.map(({ title, data }) => (
           <li className={styles.list__item} key={title}>
@@ -19,7 +19,7 @@ const PersonInfo: React.FC<PersonInfoProps> = ({ personInfo }) => {
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 };
 

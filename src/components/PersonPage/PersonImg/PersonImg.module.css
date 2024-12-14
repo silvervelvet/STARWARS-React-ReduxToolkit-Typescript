@@ -1,0 +1,25 @@
+.img_container {
+  position: relative;
+}
+
+.personImage {
+  border-radius: 1rem;
+  max-width: 25rem;
+}
+
+.iconFavorite {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.iconFavorite:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 1rem #f39c12) drop-shadow(0 0 2rem #f39c12);
+}
