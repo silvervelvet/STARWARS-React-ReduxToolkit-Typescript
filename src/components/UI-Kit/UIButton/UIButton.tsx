@@ -4,17 +4,16 @@ import cn from 'classnames';
 
 interface UIButtonProps {
   text: string;
-  onClick: () => void;
-  disabled: boolean;
-  theme?: string;
-  classes?: boolean;
+  onClick: (e: React.MouseEvent<HTMLElement>) => void;  disabled: boolean;
+  theme?: 'light' | 'dark';
+  classes?: string;
 }
 
 const UIButton: React.FC<UIButtonProps> = ({
   text,
   onClick,
   disabled,
-  theme = 'dark',
+  theme = 'light',
   classes,
 }) => {
   return (

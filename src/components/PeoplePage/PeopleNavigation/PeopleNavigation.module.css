@@ -1,0 +1,18 @@
+.button_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.peopleNavigationLightButton:hover,
+.peopleNavigationLightButton:active {
+  color: #ffff;
+  background-color: var(--color-lightGreen-lightTheme);
+  border: none;
+}
+
+.peopleNavigationDarkButton:hover,
+.peopleNavigationDarkButton:active {
+  color: #ffff;
+  background-color: var(--color-lightRed-darkTheme);
+  border: none;
+}

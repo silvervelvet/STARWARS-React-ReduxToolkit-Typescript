@@ -1,0 +1,56 @@
+:root {
+  --color-red-darkTheme: #c53513;
+  --color-lightRed-darkTheme: #ff613c;
+  --color-green-lightTheme: #4f6112;
+  --color-lightGreen-lightTheme: #7ca300;
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #ffffff;
+  --color-green-lightTheme: #4f6112;
+}
+
+body.dark {
+  background-color: #121212;
+  --color-red-darkTheme: #c53513;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+}

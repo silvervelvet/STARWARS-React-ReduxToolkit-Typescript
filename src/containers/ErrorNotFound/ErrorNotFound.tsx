@@ -1,12 +1,14 @@
+import styles from './ErrorNotFound.module.css';
+
 import { useLocation } from 'react-router-dom';
 
 const ErrorNotFound = () => {
   const location = useLocation();
 
   return (
-    <div>
-      <h1>404 - Page Not Found. No match for {location.pathname}</h1>
-    </div>
+    <section className={styles.wrapper_error}>
+      <div className={styles.title_error}>404 - Page Not Found. No match for {location.pathname}</div>
+    </section>
   );
 };
 

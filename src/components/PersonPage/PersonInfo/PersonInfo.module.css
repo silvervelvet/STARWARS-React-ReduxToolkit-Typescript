@@ -1,0 +1,12 @@
+.list__container {
+
+}
+
+.list__item {
+
+}
+
+.item__title {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
