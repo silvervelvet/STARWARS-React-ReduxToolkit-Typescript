@@ -40,7 +40,7 @@ header {
 }
 
 .logo {
-  max-width: 20rem;
+  max-width: 18rem;
   object-fit: contain;
   justify-self: center;
 }
