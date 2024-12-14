@@ -21,11 +21,16 @@ header {
 }
 
 .social_media_item {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
 }
 
 .social_media_link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -88,4 +93,26 @@ header {
 
 .log {
   justify-self: end;
+}
+
+.favoriteCount {
+  margin-left: 1rem;
+  border-radius: 50%;
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding-top: 0.1rem;
+}
+
+.favoriteCount_lightTheme {
+  background-color: var(--color-lightGreen-lightTheme);
+}
+
+.favoriteCount_darkTheme {
+  background-color: var(--color-red-darkTheme);
 }
