@@ -7,8 +7,11 @@ import { API_PEOPLE } from '../../constants/constants';
 import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
 import { getApiRequest } from '../../utils/networkRequest';
 import { getLocalStorage } from '../../utils/localStorage';
+import PeopleList from '../../components/PeoplePage/PeopleList/PeopleList';
+import classNames from 'classnames';
+import { useTheme } from '../../context/ThemeContext';
 
-interface Person {
+interface ApiPerson {
   url: string;
   name: string;
   height: string;
@@ -21,19 +24,26 @@ interface Person {
   films: string[];
 }
 
+interface ListPerson {
+  id: string;
+  name: string;
+  img: string;
+}
+
 interface PeopleApiResponse {
-  results: Person[];
+  results: ApiPerson[];
   previous: string | null;
   next: string | null;
 }
 
 interface FavouritesState {
   favoriteIds: string[];
-  people: Person[];
+  people: ApiPerson[];
 }
 
 const FavouritePage: React.FC = () => {
   const dispatch = useDispatch();
+  const { theme } = useTheme();
 
   const favouritePeople = useSelector(
     (state: { favourites: FavouritesState }) => state.favourites.favoriteIds
@@ -60,38 +70,33 @@ const FavouritePage: React.FC = () => {
     }
   }, [dispatch]);
 
+  const peopleToShow: ListPerson[] = favouritePeople
+    .map((url) => allPeople.find((p) => p.url === url))
+    .filter((person): person is ApiPerson => person !== undefined)
+    .map((person) => ({
+      id: getPeopleId(person.url),
+      name: person.name,
+      img: getPeopleImage(getPeopleId(person.url)),
+    }));
+
   return (
-    <>
-      <h1>FavouritePage</h1>
+    <section className={styles.wrapper}>
+      <div
+        className={classNames(styles.title, {
+          [styles.title_LightTheme]: theme === 'light',
+          [styles.title_DarkTheme]: theme === 'dark',
+        })}
+      >
+        Favourites
+      </div>
       {favouritePeople.length === 0 ? (
-        <p>No favorites added yet.</p>
+        <div className={styles.no_favorites_title}>
+          No favorites added yet :(
+        </div>
       ) : (
-        <ul>
-          {favouritePeople.map((url) => {
-            const person = allPeople.find((p) => p.url === url);
-            if (person) {
-              const personId = getPeopleId(person.url);
-              const personImg = getPeopleImage(personId);
-              return (
-                <li key={url}>
-                  <img
-                    src={personImg}
-                    alt={person.name}
-                    className={styles.personImg}
-                  />
-                  <span>{person.name}</span>
-                </li>
-              );
-            }
-            return (
-              <li key={url}>
-                <span>Person not found</span>
-              </li>
-            );
-          })}
-        </ul>
+        <PeopleList people={peopleToShow} />
       )}
-    </>
+    </section>
   );
 };
 

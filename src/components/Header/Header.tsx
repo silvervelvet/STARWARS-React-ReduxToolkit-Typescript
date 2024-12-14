@@ -9,8 +9,6 @@ import iconFacebookLightTheme from './img/facebook_lightTheme.png';
 import iconFacebookDarkTheme from './img/facebook_darkTheme.png';
 import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
 import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
-import iconKidsLightTheme from './img/icon_kids_lightTheme.png';
-import iconKidsDarkTheme from './img/icon_kids_darkTheme.png';
 import logoSWLightTheme from './img/sw_light_logo.png';
 import logoSWDarkTheme from './img/sw_dark_logo.png';
 
@@ -20,6 +18,7 @@ import { NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import classNames from 'classnames';
 import ThemeToggleButton from '../../context/ThemeToggleButton';
+import { useSelector } from 'react-redux';
 
 const getLinkClassNames = (isActive, theme) => {
   return classNames(styles.title, {
@@ -32,6 +31,10 @@ const getLinkClassNames = (isActive, theme) => {
 
 const Header = () => {
   const { theme } = useTheme();
+  const favouritePeople = useSelector(
+    (state: { favourites: { favoriteIds: string[] } }) =>
+      state.favourites.favoriteIds
+  );
 
   return (
     <header>
@@ -111,18 +114,6 @@ const Header = () => {
               ></img>
             </a>
           </li>
-          <li className={styles.social_media_item}>
-            <a
-              href="https://starwarskids.com/"
-              className={styles.social_media_link}
-            >
-              <img
-                src={theme === 'light' ? iconKidsLightTheme : iconKidsDarkTheme}
-                alt="socal-media-kids"
-                className={styles.social_media_img}
-              ></img>
-            </a>
-          </li>
         </ul>
         <img
           src={theme === 'light' ? logoSWLightTheme : logoSWDarkTheme}
@@ -165,7 +156,17 @@ const Header = () => {
               to="/favourite"
               className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
-              Favourite People
+              Favourites
+              {favouritePeople.length > 0 && (
+                <span
+                  className={classNames(styles.favoriteCount, {
+                    [styles.favoriteCount_lightTheme]: theme === 'light',
+                    [styles.favoriteCount_darkTheme]: theme === 'dark',
+                  })}
+                >
+                  {favouritePeople.length}
+                </span>
+              )}
             </NavLink>
           </li>
           <li>
