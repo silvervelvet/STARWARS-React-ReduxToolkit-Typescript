@@ -1,7 +1,118 @@
-.titleDark {
-  color: blue;
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.titleLight {
-  color: yellow;
+.top_header {
+  padding: 0rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  align-items:start;
+}
+
+.social_media_list {
+  display: flex;
+  justify-content: center;
+  justify-self: start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social_media_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+
+.social_media_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.social_media_img {
+  max-width: 1.7rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social_media_link:hover .social_media_img {
+  transform: scale(1.2);
+}
+
+.logo {
+  max-width: 18rem;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.navigation {
+  padding: 0rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation_list {
+  justify-content: center;
+  display: flex;
+  gap: 8rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.iconTextWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #a9a9a9;
+}
+
+.titleLight:hover, .titleLight:focus, .titleLight_active {
+  color: var(--color-green-lightTheme);
+}
+
+.titleDark:hover, .titleDark:focus, .titleDark_active {
+  color: var(--color-red-darkTheme);
+}
+
+.themeToggleButton {
+  margin-left: auto;
+}
+
+.log {
+  justify-self: end;
+}
+
+.favoriteCount {
+  margin-left: 1rem;
+  border-radius: 50%;
+  padding: 0.4rem;
+  font-size: 1.5rem;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding-top: 0.1rem;
+}
+
+.favoriteCount_lightTheme {
+  background-color: var(--color-lightGreen-lightTheme);
+}
+
+.favoriteCount_darkTheme {
+  background-color: var(--color-red-darkTheme);
 }

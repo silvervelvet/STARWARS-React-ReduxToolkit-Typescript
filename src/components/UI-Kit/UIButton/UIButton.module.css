@@ -1,19 +1,41 @@
+.button {
+  max-width: 19rem;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  border:#a9a9a9 solid 2px;
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
 .button:disabled,
 .button:disabled:hover {
+  color: #a9a9a9;
+  background-color: transparent;
+  border:#a9a9a9 solid 2px;
   cursor: auto;
 }
 
-.dark {
-  border: 1px solid ;
-}
-.dark:hover {
-  color: black;
+.light {
+  color: var(--color-green-lightTheme);
+  border: var(--color-green-lightTheme) solid 2px;
 }
 
-.light {
-  border: 1px solid black;
-  color: black;
-}
 .light:hover {
-  color: red;
+  background-color: var(--color-green-lightTheme);
+  color: white;
+}
+
+.dark {
+  color: var(--color-red-darkTheme);
+  border: var(--color-red-darkTheme) solid 2px;
+}
+
+.dark:hover {
+  background-color: var(--color-red-darkTheme);
+  color: white;
 }
