@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from './context/ThemeContext';
 import App from './containers/App';
 import store from './store/store';
+import LogRocket from 'logrocket';
+
+LogRocket.init('zwfqc7/server_starwars');
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

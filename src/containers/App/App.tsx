@@ -11,6 +11,7 @@ import FavouritePage from '../FavouritePage';
 import SearchPage from '../SearchPage';
 import { useTheme } from '../../context/ThemeContext';
 import Footer from '../../components/Footer';
+import LogInPage from '../LogInPage';
 
 const App: React.FC = () => {
   const { theme } = useTheme();
@@ -32,6 +33,7 @@ const App: React.FC = () => {
           <Route path="/people/:id" element={<PersonPage />} />
           <Route path="/favourite" element={<FavouritePage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/login" element={<LogInPage />} />
           <Route path="*" element={<ErrorNotFound />} />
         </Routes>
         <Footer />
