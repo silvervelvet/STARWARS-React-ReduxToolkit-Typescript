@@ -120,7 +120,7 @@ const Header = () => {
           className={styles.logo}
           alt="star-wars-logo"
         ></img>
-        <div className={styles.log}>Log In</div>
+        <NavLink to="/login">Log In</NavLink>
       </section>
       <section className={styles.navigation}>
         <ul className={styles.navigation_list}>
