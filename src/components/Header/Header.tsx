@@ -121,6 +121,7 @@ const Header = () => {
           alt="star-wars-logo"
         ></img>
         <NavLink to="/login">Log In</NavLink>
+        <NavLink to="/signup">Sign Up</NavLink>
       </section>
       <section className={styles.navigation}>
         <ul className={styles.navigation_list}>
