@@ -1,0 +1,60 @@
+.search_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.search_item {
+  transition: transform 0.3s ease;
+}
+
+.search_item:hover {
+  transform: scale(1.05);
+}
+
+.search_link {
+  display: flex;
+  align-items: center;
+}
+
+.search_photo {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.search_photoLight:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 0.8rem var(--color-lightGreen-lightTheme)) drop-shadow(0 0 0.8rem var(--color-lightGreen-lightTheme));
+}
+
+.search_photoDark:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 0.8rem var(--color-lightRed-darkTheme)) drop-shadow(0 0 0.8rem var(--color-lightRed-darkTheme));
+}
+
+.searchName {
+  text-align: center;
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.searchNameLight {
+  color: var(--color-lightGreen-lightTheme);
+}
+
+.searchNameDark {
+  color: var(--color-lightRed-darkTheme);
+}
+
+.noResults {
+  font-size: 1.7rem;
+  color: #a9a9a9;
+  text-align: center;
+}
