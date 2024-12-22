@@ -87,7 +87,7 @@ const SearchPage = () => {
           type="text"
           value={inputSearchValue}
           onChange={handleInputChange}
-          placeholder={isFocused ? "Input character's name" : ''}
+          placeholder={!inputSearchValue && !isFocused ? "Input character's name" : ''}
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
