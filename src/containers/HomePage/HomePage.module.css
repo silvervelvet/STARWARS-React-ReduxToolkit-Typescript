@@ -1,0 +1,13 @@
+.main_home {
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title_home {
+  color: #a9a9a9;
+  font-weight: 400;
+  text-align: center;
+}
+
