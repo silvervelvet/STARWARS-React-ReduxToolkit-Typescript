@@ -9,8 +9,8 @@ import PersonPage from '../PersonPage';
 import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
 import SearchPage from '../SearchPage';
-import { useTheme } from '../../context/ThemeContext';
 import Footer from '../../components/Footer';
+import { useTheme } from '../../context/ThemeContext';
 
 const App: React.FC = () => {
   const { theme } = useTheme();
@@ -26,6 +26,7 @@ const App: React.FC = () => {
               : styles.border_bottomDark
           }
         />
+        <div className={styles.mainContent}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/people" element={<PeoplePage />} />
@@ -34,8 +35,8 @@ const App: React.FC = () => {
           <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<ErrorNotFound />} />
         </Routes>
+        </div>
         <Footer />
-
       </div>
     </BrowserRouter>
   );

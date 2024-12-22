@@ -1,0 +1,26 @@
+.wrapper_footer {
+  padding: 1rem 10rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.title_footer {
+  color: #a9a9a9;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.list_footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.link_footer {
+  color: #a9a9a9;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
