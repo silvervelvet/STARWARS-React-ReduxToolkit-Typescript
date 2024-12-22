@@ -11,6 +11,10 @@
   font-size: 2rem;
 }
 
+.title {
+  text-transform: uppercase;
+}
+
 .title_LightTheme {
   color: var(--color-green-lightTheme);
 }
