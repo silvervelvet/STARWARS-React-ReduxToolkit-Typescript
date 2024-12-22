@@ -1,5 +1,7 @@
+import { useTheme } from '../../context/ThemeContext';
 import styles from './SearchPageInfo.module.css';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 
 interface Person {
   id: string;
@@ -14,21 +16,37 @@ interface SearchPageInfoProps {
 const SearchPageInfo: React.FC<SearchPageInfoProps> = ({ peopleSearch }) => {
   const hasResults = peopleSearch.length > 0;
 
+  const { theme } = useTheme();
+
   return (
     <>
       {hasResults ? (
-        <ul>
+        <ul className={styles.search_list}>
           {peopleSearch.map(({ id, name, img }) => (
-            <li key={id}>
+            <li className={styles.search_item} key={id}>
               <Link to={`/people/${id}`}>
-                <img src={img} alt={name} />
-                <p>{name}</p>
+                <img
+                  className={cn(styles.search_photo, {
+                    [styles.search_photoLight]: theme === 'light',
+                    [styles.search_photoDark]: theme === 'dark',
+                  })}
+                  src={img}
+                  alt={name}
+                />
+                <div
+                  className={cn(styles.searchName, {
+                    [styles.searchNameLight]: theme === 'light',
+                    [styles.searchNameDark]: theme === 'dark',
+                  })}
+                >
+                  {name}
+                </div>
               </Link>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No results</p>
+        <div className={styles.noResults} >No results</div>
       )}
     </>
   );
