@@ -10,6 +10,9 @@ import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
 import SearchPage from '../SearchPage';
 import Footer from '../../components/Footer';
+import LogInPage from '../LogInPage';
+import SignUpPage from '../SignUpPage';
+        
 import { useTheme } from '../../context/ThemeContext';
 
 const App: React.FC = () => {
@@ -33,6 +36,8 @@ const App: React.FC = () => {
           <Route path="/people/:id" element={<PersonPage />} />
           <Route path="/favourite" element={<FavouritePage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/login" element={<LogInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route path="*" element={<ErrorNotFound />} />
         </Routes>
         </div>
