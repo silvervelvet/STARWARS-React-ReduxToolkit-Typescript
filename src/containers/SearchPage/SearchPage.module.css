@@ -1,44 +1,47 @@
-.wrapper__input {
-  --border-radius: 3px;
-  --border: 3px;
-  --clear-width: 35px;
+.search_container {
+  padding: 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.wrapper__input {
+.search_title {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.search_title_LightTheme {
+  color: var(--color-green-lightTheme);
+}
+
+.search_title_DarkTheme {
+  color: var(--color-red-darkTheme);
+}
+
+.form_wrapper {
   position: relative;
   display: inline-flex;
 }
-.input {
-  min-width: 300px;
+
+.input_wrapper {
+  min-width: 30rem;
   padding: 10px 15px;
-  padding-right: calc(var(--clear-width) + 15px);
-  border: var(--border) solid;
-  border-color: var(--color-lightgray);
-  border-radius: var(--border-radius);
-  font-size: var(--font-size-medium);
-  font-family: var(--font-family-main);
-  outline: none;
-}
-.input:focus {
-  border-color: var(--color-blue);
-}
-.clear {
-  position: absolute;
-  top: var(--border);
-  right: var(--border);
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  object-fit: contain;
-  object-position: center center;
-  transition: .5s;
-  opacity: .4;
-  cursor: pointer;
-  border: none;
-  outline: none;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
+.input_wrapper:focus {
+  transform: scale(1.05);
+}
 
-.clear__disabled {
-  opacity: .2;
+.input_wrapper_LightTheme {
+  border: var(--color-green-lightTheme) solid 1px;
+  color: var(--color-green-lightTheme);
+}
+
+.input_wrapper_DarkTheme {
+  border: var(--color-red-darkTheme) solid 1px;
+  color: var(--color-red-darkTheme);
 }
