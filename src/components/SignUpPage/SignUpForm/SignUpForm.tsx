@@ -8,6 +8,10 @@ import * as Yup from 'yup';
 import { auth } from '../../../firebaseConfig';
 
 import styles from './SignUpForm.module.css';
+import { Button } from '@mui/material';
+import UIButton from '../../UI-Kit/UIButton/UIButton';
+import { useTheme } from '../../../context/ThemeContext';
+import classNames from 'classnames';
 
 interface FormikValues {
   email: string;
@@ -30,7 +34,10 @@ const validationSchema = Yup.object({
 const SignUpForm: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
   const navigate = useNavigate();
+
+  const { theme } = useTheme();
 
   const handleSubmit = async (values: FormikValues) => {
     const { email, password } = values;
@@ -47,7 +54,7 @@ const SignUpForm: React.FC = () => {
 
       setTimeout(() => {
         navigate('/login');
-      }, 5000);
+      }, 3000);
     } catch (error: any) {
       LogRocket.error('Error during registration:', error.message);
 
@@ -57,54 +64,118 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <section>
-      {successMessage && <div className="success">{successMessage}</div>}
-      {error && <div className="error">{error}</div>}
+    <section
+      className={classNames(
+        styles.sign_form_wrapper,
+        theme === 'light'
+          ? styles.sign_form_wrapper_light
+          : styles.sign_form_wrapper_dark
+      )}
+    >
+      {successMessage && (
+        <div className={styles.sign_message}>{successMessage}</div>
+      )}
+      {error && <div className={styles.sign_message}>{error}</div>}
 
       <Formik
         initialValues={{ email: '', password: '', confirmPassword: '' }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
+        <Form className={styles.form_group}>
+          <div className={styles.input_group}>
+            <label
+              htmlFor="email"
+              className={classNames(
+                theme === 'light'
+                  ? styles.label_form_light
+                  : styles.label_form_dark
+              )}
+            >
+              Email
+            </label>
             <Field
               id="email"
               type="email"
               name="email"
-              className="form-control"
+              className={classNames(
+                styles.field_form,
+                theme === 'light'
+                  ? styles.field_form_light
+                  : styles.field_form_dark
+              )}
               placeholder="Enter your email"
             />
-            <ErrorMessage name="email" component="div" className="error" />
+            <ErrorMessage
+              className={styles.error_message}
+              name="email"
+              component="div"
+            />
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
+          <div className={styles.input_group}>
+            <label
+              htmlFor="password"
+              className={classNames(
+                theme === 'light'
+                  ? styles.label_form_light
+                  : styles.label_form_dark
+              )}
+            >
+              Password
+            </label>
             <Field
               id="password"
               type="password"
               name="password"
-              className="form-control"
+              className={classNames(
+                styles.field_form,
+                theme === 'light'
+                  ? styles.field_form_light
+                  : styles.field_form_dark
+              )}
               placeholder="Enter your password"
             />
-            <ErrorMessage name="password" component="div" className="error" />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className={styles.error_message}
+            />
           </div>
-          <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm your password</label>
+          <div className={styles.input_group}>
+            <label
+              htmlFor="confirmPassword"
+              className={classNames(
+                theme === 'light'
+                  ? styles.label_form_light
+                  : styles.label_form_dark
+              )}
+            >
+              Confirm your password
+            </label>
             <Field
               id="confirmPassword"
               type="password"
               name="confirmPassword"
-              className="form-control"
+              className={classNames(
+                styles.field_form,
+                theme === 'light'
+                  ? styles.field_form_light
+                  : styles.field_form_dark
+              )}
               placeholder="Confirm your password"
             />
             <ErrorMessage
               name="confirmPassword"
               component="div"
-              className="error"
+              className={styles.error_message}
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <UIButton
+            classes={styles.btn_sign}
+            text={'Sign Up'}
+            theme={theme}
+            type="submit"
+          />
         </Form>
       </Formik>
     </section>
