@@ -1,20 +1,18 @@
+import classNames from 'classnames';
+import React, { useEffect, useState , Suspense } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
-import { API_PERSON } from '../../constants/constants';
-import { getApiRequest, PersonApiResponse } from '../../utils/networkRequest';
-import { getPeopleImage } from '../../services/getPeopleData';
 
 import PersonImg from '../../components/PersonPage/PersonImg';
 import PersonInfo from '../../components/PersonPage/PersonInfo';
-import UiLoading from '../../components/UI-Kit/UILoading';
-
-import React, { Suspense } from 'react';
 import UIButton from '../../components/UI-Kit/UIButton/UIButton';
+import UiLoading from '../../components/UI-Kit/UILoading';
+import { API_PERSON } from '../../constants/constants';
 import { useTheme } from '../../context/ThemeContext';
+import { getPeopleImage } from '../../services/getPeopleData';
+import { getApiRequest, PersonApiResponse } from '../../utils/networkRequest';
 
 import styles from './PersonPage.module.css';
-import classNames from 'classnames';
+
 
 const PersonFilms = React.lazy(
   () => import('../../components/PersonPage/PersonFilms')

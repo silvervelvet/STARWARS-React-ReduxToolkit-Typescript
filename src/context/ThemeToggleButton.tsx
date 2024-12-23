@@ -1,10 +1,9 @@
-import styles from './ThemeToggleButton.module.css';
-import iconDarkTheme from './img/death-star_darkTheme.png';
-import iconLightTheme from './img/jedi_lightTheme.png';
-
 import classNames from 'classnames';
 
+import iconDarkTheme from './img/death-star_darkTheme.png';
+import iconLightTheme from './img/jedi_lightTheme.png';
 import { useTheme } from './ThemeContext';
+import styles from './ThemeToggleButton.module.css';
 
 const ThemeToggleButton: React.FC = () => {
   const { theme, toggleTheme } = useTheme()!;

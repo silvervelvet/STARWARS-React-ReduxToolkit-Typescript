@@ -1,24 +1,24 @@
-import styles from './Header.module.css';
-import iconTikTokLightTheme from './img/tiktok_lightTheme.png';
-import iconTikTokDarkTheme from './img/tiktok_darkTheme.png';
-import iconInstLightTheme from './img/instagram_lightTheme.png';
-import iconInstDarkTheme from './img/instagram_darkTheme.png';
-import iconTwitterLightTheme from './img/twitter_lightTheme.png';
-import iconTwitterDarkTheme from './img/twitter_darkTheme.png';
-import iconFacebookLightTheme from './img/facebook_lightTheme.png';
-import iconFacebookDarkTheme from './img/facebook_darkTheme.png';
-import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
-import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
-import logoSWLightTheme from './img/sw_light_logo.png';
-import logoSWDarkTheme from './img/sw_dark_logo.png';
-
 import SearchIcon from '@mui/icons-material/Search';
-
-import { NavLink } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
 import classNames from 'classnames';
-import ThemeToggleButton from '../../context/ThemeToggleButton';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+import { useTheme } from '../../context/ThemeContext';
+import ThemeToggleButton from '../../context/ThemeToggleButton';
+
+import styles from './Header.module.css';
+import iconFacebookDarkTheme from './img/facebook_darkTheme.png';
+import iconFacebookLightTheme from './img/facebook_lightTheme.png';
+import iconInstDarkTheme from './img/instagram_darkTheme.png';
+import iconInstLightTheme from './img/instagram_lightTheme.png';
+import logoSWDarkTheme from './img/sw_dark_logo.png';
+import logoSWLightTheme from './img/sw_light_logo.png';
+import iconTikTokDarkTheme from './img/tiktok_darkTheme.png';
+import iconTikTokLightTheme from './img/tiktok_lightTheme.png';
+import iconTwitterDarkTheme from './img/twitter_darkTheme.png';
+import iconTwitterLightTheme from './img/twitter_lightTheme.png';
+import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
+import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
 
 const getLinkClassNames = (isActive, theme) => {
   return classNames(styles.title, {

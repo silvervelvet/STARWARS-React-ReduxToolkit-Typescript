@@ -1,11 +1,13 @@
-import styles from './PeoplePage.module.css';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PeopleNavigation from '../../components/PeoplePage/PeopleNavigation';
+
 import PeopleList from '../../components/PeoplePage/PeopleList';
-import { getApiRequest } from '../../utils/networkRequest';
+import PeopleNavigation from '../../components/PeoplePage/PeopleNavigation';
 import { API_PEOPLE } from '../../constants/constants';
 import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
+import { getApiRequest } from '../../utils/networkRequest';
+
+import styles from './PeoplePage.module.css';
 
 export interface People {
   id: string;

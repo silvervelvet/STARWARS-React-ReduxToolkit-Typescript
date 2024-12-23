@@ -1,8 +1,8 @@
-import styles from './PersonFilms.module.css';
-
 import { useState, useEffect } from 'react';
 
 import { makeConcurrentRequest } from '../../../utils/networkRequest';
+
+import styles from './PersonFilms.module.css';
 
 interface Film {
   title: string;

@@ -1,6 +1,6 @@
-import styles from './UILoading.module.css';
-
 import { useEffect, useState } from 'react';
+
+import styles from './UILoading.module.css';
 
 const UILoading = ({ theme = 'white' }) => {
   const [colorFont, setColorFont] = useState<string | null>(null);

@@ -1,11 +1,11 @@
-import styles from './PersonImg.module.css';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { addPerson, removePerson } from '../../../store/slice';
-import { PersonImgProps } from '../../../containers/PersonPage/PersonPage';
 
-import iconFavorite from './img/favorite.svg';
+import { PersonImgProps } from '../../../containers/PersonPage/PersonPage';
+import { addPerson, removePerson } from '../../../store/slice';
+
 import iconFavoriteFill from './img/favorite-fill.svg';
+import iconFavorite from './img/favorite.svg';
+import styles from './PersonImg.module.css';
 
 const PersonImg: React.FC<PersonImgProps> = ({
   personId,

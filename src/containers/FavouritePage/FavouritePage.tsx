@@ -1,15 +1,16 @@
-import styles from './FavouritePage.module.css';
-
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { setPeople, setFavourites } from '../../store/slice';
-import { API_PEOPLE } from '../../constants/constants';
-import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
-import { getApiRequest } from '../../utils/networkRequest';
-import { getLocalStorage } from '../../utils/localStorage';
-import PeopleList from '../../components/PeoplePage/PeopleList/PeopleList';
 import classNames from 'classnames';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import PeopleList from '../../components/PeoplePage/PeopleList/PeopleList';
+import { API_PEOPLE } from '../../constants/constants';
 import { useTheme } from '../../context/ThemeContext';
+import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
+import { setPeople, setFavourites } from '../../store/slice';
+import { getLocalStorage } from '../../utils/localStorage';
+import { getApiRequest } from '../../utils/networkRequest';
+
+import styles from './FavouritePage.module.css';
 
 interface ApiPerson {
   url: string;

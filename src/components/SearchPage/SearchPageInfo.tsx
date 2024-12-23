@@ -1,7 +1,9 @@
-import { useTheme } from '../../context/ThemeContext';
-import styles from './SearchPageInfo.module.css';
-import { Link } from 'react-router-dom';
 import cn from 'classnames';
+import { Link } from 'react-router-dom';
+
+import { useTheme } from '../../context/ThemeContext';
+
+import styles from './SearchPageInfo.module.css';
 
 interface Person {
   id: string;
