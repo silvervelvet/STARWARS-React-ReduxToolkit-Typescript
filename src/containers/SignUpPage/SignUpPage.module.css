@@ -1,0 +1,21 @@
+.sign_wrapper {
+  padding: 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sign_title {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.sign_title_Light {
+  color: var(--color-green-lightTheme);
+}
+
+.sign_title_Dark {
+  color: var(--color-red-darkTheme);
+}
