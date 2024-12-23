@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-
-import styles from './Slider.module.css';
-import img1Slider from './img/crew-tentpole-hero-slider.jpeg';
-import img2Slider from './img/lego-youtube-slider.jpeg';
-import img3Slider from './img/ep-3-sc-slider.jpeg';
-import prevIconBtn from './img/prev-button.png';
-import nextIconBtn from './img/next-button.png';
-import sw_skeleton_crew from './img/star-wars-skeleton-crew-logo-white.png';
-
 import classNames from 'classnames';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { useTheme } from '../../../context/ThemeContext';
+
+import img1Slider from './img/crew-tentpole-hero-slider.jpeg';
+import img3Slider from './img/ep-3-sc-slider.jpeg';
+import img2Slider from './img/lego-youtube-slider.jpeg';
+import nextIconBtn from './img/next-button.png';
+import prevIconBtn from './img/prev-button.png';
+import sw_skeleton_crew from './img/star-wars-skeleton-crew-logo-white.png';
+import styles from './Slider.module.css';
 
 const Slider: React.FC = () => {
   const images = [img1Slider, img2Slider, img3Slider];

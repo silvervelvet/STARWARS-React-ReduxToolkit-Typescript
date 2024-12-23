@@ -1,19 +1,18 @@
-import styles from './App.module.css';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import HomePage from '../HomePage';
-import PeoplePage from '../PeoplePage';
-import PersonPage from '../PersonPage';
+import { useTheme } from '../../context/ThemeContext';
 import ErrorNotFound from '../ErrorNotFound';
 import FavouritePage from '../FavouritePage';
-import SearchPage from '../SearchPage';
-import Footer from '../../components/Footer';
+import HomePage from '../HomePage';
 import LogInPage from '../LogInPage';
+import PeoplePage from '../PeoplePage';
+import PersonPage from '../PersonPage';
+import SearchPage from '../SearchPage';
 import SignUpPage from '../SignUpPage';
-        
-import { useTheme } from '../../context/ThemeContext';
+
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   const { theme } = useTheme();

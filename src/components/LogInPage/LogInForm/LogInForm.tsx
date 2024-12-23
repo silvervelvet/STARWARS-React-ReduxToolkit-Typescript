@@ -1,10 +1,11 @@
 import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
-import styles from './LogInForm.module.css';
-
 import LogRocket from 'logrocket';
-import * as Yup from 'yup';
 import { useState } from 'react';
+import * as Yup from 'yup';
+
 import { loginWithEmail } from '../../../authService';
+
+import styles from './LogInForm.module.css';
 
 interface FormikValues {
     email: string;

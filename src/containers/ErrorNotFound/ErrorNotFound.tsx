@@ -1,6 +1,6 @@
-import styles from './ErrorNotFound.module.css';
-
 import { useLocation } from 'react-router-dom';
+
+import styles from './ErrorNotFound.module.css';
 
 const ErrorNotFound = () => {
   const location = useLocation();

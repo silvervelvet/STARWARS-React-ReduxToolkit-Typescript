@@ -1,14 +1,16 @@
-import { useEffect, useState, useCallback } from 'react';
-import styles from './SearchPage.module.css';
-import { getApiRequest } from '../../utils/networkRequest';
-import { API_SEARCH } from '../../constants/constants';
-import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
-import SearchPageInfo from '../../components/SearchPage/SearchPageInfo';
-import cn from 'classnames';
-import { debounce } from 'lodash';
-import classNames from 'classnames';
-import { useTheme } from '../../context/ThemeContext';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import cn from 'classnames';
+import classNames from 'classnames';
+import { debounce } from 'lodash';
+import { useEffect, useState, useCallback } from 'react';
+
+import SearchPageInfo from '../../components/SearchPage/SearchPageInfo';
+import { API_SEARCH } from '../../constants/constants';
+import { useTheme } from '../../context/ThemeContext';
+import { getPeopleId, getPeopleImage } from '../../services/getPeopleData';
+import { getApiRequest } from '../../utils/networkRequest';
+
+import styles from './SearchPage.module.css';
 
 const SearchPage = () => {
   const [inputSearchValue, setInputSearchValue] = useState('');

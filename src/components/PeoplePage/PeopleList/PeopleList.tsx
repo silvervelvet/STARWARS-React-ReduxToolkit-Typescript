@@ -1,8 +1,9 @@
 import classNames from 'classnames';
-import styles from './PeopleList.module.css';
-
 import { Link } from 'react-router-dom';
+
 import { useTheme } from '../../../context/ThemeContext';
+
+import styles from './PeopleList.module.css';
 
 interface Person {
   id: string;

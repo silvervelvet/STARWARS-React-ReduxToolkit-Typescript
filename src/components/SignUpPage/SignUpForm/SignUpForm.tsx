@@ -1,9 +1,9 @@
-import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
 import firebase from 'firebase/app';
+import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
 import 'firebase/auth';
 import LogRocket from 'logrocket';
-import * as Yup from 'yup';
 import { useState } from 'react';
+import * as Yup from 'yup';
 
 import styles from './SignUpForm.module.css';
 

@@ -1,6 +1,6 @@
-import styles from './UIButton.module.css';
-
 import cn from 'classnames';
+
+import styles from './UIButton.module.css';
 
 interface UIButtonProps {
   text: string;
