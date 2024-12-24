@@ -50,6 +50,43 @@ header {
   justify-self: center;
 }
 
+.auth_container {
+  display: flex;
+  justify-content: center;
+  justify-self: flex-end;
+  gap: 3rem;
+}
+
+.auth {
+  font-family: 'Nunito Sans', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.authLight {
+  color: var(--color-lightGreen-lightTheme);
+}
+
+.authDark {
+  color: var(--color-lightRed-darkTheme);
+}
+
+.authLight:hover {
+  transform: scale(1.05);
+}
+
+.authDark:hover {
+  transform: scale(1.05);
+}
+
+.auth_logIn_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .navigation {
   padding: 0rem 10rem;
   display: flex;
@@ -116,3 +153,4 @@ header {
 .favoriteCount_darkTheme {
   background-color: var(--color-red-darkTheme);
 }
+
