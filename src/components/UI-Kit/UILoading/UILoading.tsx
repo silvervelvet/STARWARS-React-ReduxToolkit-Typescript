@@ -1,30 +1,30 @@
-import styles from './UILoading.module.css';
-
 import { useEffect, useState } from 'react';
 
-const UILoading = ({ theme = 'white' }) => {
-  const [colorFont, setColorFont] = useState<string | null>(null);
+import styles from './UILoading.module.css';
+import loaderDark from './img/loading_Dark.svg';
+import loaderLight from './img/loading_Light.svg';
+import { useTheme } from '../../../context/ThemeContext'
+
+const UILoading = () => {
+  const [loaderIcon, setLoaderIcon] = useState<string | null>(null);
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     switch (theme) {
-      case 'black':
-        setColorFont('black');
+      case 'dark':
+        setLoaderIcon(loaderDark);
         break;
-      case 'white':
-        setColorFont('white');
-        break;
-      case 'blue':
-        setColorFont('blue');
+      case 'light':
+        setLoaderIcon(loaderLight);
         break;
       default:
-        setColorFont('white');
+        setLoaderIcon(loaderLight);
     }
-  }, []);
+  }, [theme]);
 
   return (
-    <>
-      <span>Loading..</span>
-    </>
+    <img src={loaderIcon} alt="Loading..." />
   );
 };
 
