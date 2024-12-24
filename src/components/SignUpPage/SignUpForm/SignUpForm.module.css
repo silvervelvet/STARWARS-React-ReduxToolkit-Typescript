@@ -1,0 +1,73 @@
+.sign_form_wrapper {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 1rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sign_form_wrapper_light {
+  border: var(--color-lightGreen-lightTheme) 2px solid;
+}
+
+.sign_form_wrapper_dark {
+  border: var(--color-red-darkTheme) 2px solid;
+}
+
+.sign_message {
+  font-weight: 800;
+  color: #a9a9a9;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input_group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label_form_light {
+  color:var(--color-green-lightTheme);
+  text-decoration: underline;
+}
+
+.label_form_dark{
+  color:var(--color-red-darkTheme);
+  text-decoration: underline;
+}
+
+.field_form {
+  font-size: 1.5rem;
+}
+
+.field_form_light {
+  color: var(--color-lightGreen-lightTheme);
+}
+
+.field_form_dark {
+  color: var(--color-lightRed-darkTheme);
+}
+
+.error_message {
+  color: #a9a9a9;
+  font-size: 1.2rem;
+}
+
+.btn_sign {
+  margin-top: 2rem;
+  align-self: center;
+  width: 30rem;
+  transition: transform 0.3s ease,background-color 0.3s ease;
+}
+
+.btn_sign:hover, .btn_sign:active {
+  transform: scale(1.05);
+}
