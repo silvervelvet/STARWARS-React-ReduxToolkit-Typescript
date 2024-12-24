@@ -1,8 +1,9 @@
 import classNames from 'classnames';
+
 import SignUpForm from '../../components/SignUpPage/SignUpForm';
+import { useTheme } from '../../context/ThemeContext';
 
 import styles from './SignUpPage.module.css';
-import { useTheme } from '../../context/ThemeContext';
 
 const SignUpPage = () => {
   const { theme } = useTheme();

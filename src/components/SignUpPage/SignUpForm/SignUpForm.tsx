@@ -1,3 +1,5 @@
+import { Button } from '@mui/material';
+import classNames from 'classnames';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import LogRocket from 'logrocket';
@@ -5,13 +7,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
+import { useTheme } from '../../../context/ThemeContext';
 import { auth } from '../../../firebaseConfig';
+import UIButton from '../../UI-Kit/UIButton/UIButton';
 
 import styles from './SignUpForm.module.css';
-import { Button } from '@mui/material';
-import UIButton from '../../UI-Kit/UIButton/UIButton';
-import { useTheme } from '../../../context/ThemeContext';
-import classNames from 'classnames';
+
 
 interface FormikValues {
   email: string;
