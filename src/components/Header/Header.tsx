@@ -1,7 +1,8 @@
+import LoginIcon from '@mui/icons-material/Login';
 import SearchIcon from '@mui/icons-material/Search';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { useTheme } from '../../context/ThemeContext';
 import ThemeToggleButton from '../../context/ThemeToggleButton';
@@ -31,6 +32,13 @@ const getLinkClassNames = (isActive, theme) => {
 
 const Header = () => {
   const { theme } = useTheme();
+
+  const locationSignUp = useLocation();
+  const locationLogIn = useLocation();
+
+  const isSignupPage = locationSignUp.pathname === '/signup';
+  const isLogInPage = locationLogIn.pathname === '/login';
+
   const favouritePeople = useSelector(
     (state: { favourites: { favoriteIds: string[] } }) =>
       state.favourites.favoriteIds
@@ -120,8 +128,33 @@ const Header = () => {
           className={styles.logo}
           alt="star-wars-logo"
         ></img>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <div className={styles.auth_container}>
+          {!isLogInPage && (
+            <NavLink
+              to="/login"
+              className={classNames(styles.auth, {
+                [styles.authLight]: theme === 'light',
+                [styles.authDark]: theme === 'dark',
+              })}
+            >
+              <div className={styles.auth_logIn_icon}>
+                <LoginIcon fontSize="large" />
+                <span> Log In</span>
+              </div>
+            </NavLink>
+          )}
+          {!isSignupPage && (
+            <NavLink
+              to="/signup"
+              className={classNames(styles.auth, {
+                [styles.authLight]: theme === 'light',
+                [styles.authDark]: theme === 'dark',
+              })}
+            >
+              Sign Up
+            </NavLink>
+          )}
+        </div>
       </section>
       <section className={styles.navigation}>
         <ul className={styles.navigation_list}>

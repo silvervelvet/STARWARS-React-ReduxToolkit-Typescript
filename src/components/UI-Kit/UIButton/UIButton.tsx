@@ -4,9 +4,11 @@ import styles from './UIButton.module.css';
 
 interface UIButtonProps {
   text: string;
-  onClick: (e: React.MouseEvent<HTMLElement>) => void;  disabled: boolean;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  disabled?: boolean;
   theme?: 'light' | 'dark';
   classes?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const UIButton: React.FC<UIButtonProps> = ({
@@ -15,10 +17,12 @@ const UIButton: React.FC<UIButtonProps> = ({
   disabled,
   theme = 'light',
   classes,
+  type = 'button',
 }) => {
   return (
     <>
       <button
+        type={type}
         className={cn(styles.button, styles[theme], classes)}
         onClick={onClick}
         disabled={disabled}
