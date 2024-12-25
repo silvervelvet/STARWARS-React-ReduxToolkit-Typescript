@@ -5,13 +5,14 @@
 .person_card {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 3rem 3rem;
   gap: 2rem;
   background-color: #ffff;
   max-width: 90rem;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .person_cardLightTheme {
@@ -24,10 +25,21 @@
   border-radius: 1rem;
 }
 
-.person_content {
+.person_content,
+.person_description {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  width: 100%;
+}
+
+.personFilmsWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title_person {
@@ -67,10 +79,4 @@
   font-weight: 600;
   background-color: transparent;
   color: var(--color-red-darkTheme);
-}
-
-.person_description {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
 }

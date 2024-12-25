@@ -1,8 +1,10 @@
-import { useTheme } from '../../context/ThemeContext';
+import classNames from 'classnames';
+
 import LogInForm from '../../components/LogInPage/LogInForm';
+import { useTheme } from '../../context/ThemeContext';
 
 import styles from './LogInPage.module.css';
-import classNames from 'classnames';
+
 
 const LogInPage = () => {
   const { theme } = useTheme();
