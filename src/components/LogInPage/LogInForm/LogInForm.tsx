@@ -1,14 +1,14 @@
+import classNames from 'classnames';
 import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
 import LogRocket from 'logrocket';
 import { useState } from 'react';
 import * as Yup from 'yup';
 
 import { loginWithEmail } from '../../../authService';
-
-import styles from './LogInForm.module.css';
 import { useTheme } from '../../../context/ThemeContext';
 import UIButton from '../../UI-Kit/UIButton';
-import classNames from 'classnames';
+
+import styles from './LogInForm.module.css';
 
 interface FormikValues {
   email: string;

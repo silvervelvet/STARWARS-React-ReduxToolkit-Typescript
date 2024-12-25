@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import styles from './UILoading.module.css';
+import { useTheme } from '../../../context/ThemeContext';
+
 import loaderDark from './img/loading_Dark.svg';
 import loaderLight from './img/loading_Light.svg';
-import { useTheme } from '../../../context/ThemeContext'
+import styles from './UILoading.module.css';
+
 
 const UILoading = () => {
   const [loaderIcon, setLoaderIcon] = useState<string | null>(null);
@@ -24,7 +26,9 @@ const UILoading = () => {
   }, [theme]);
 
   return (
-    <img src={loaderIcon} alt="Loading..." />
+    <div className={styles.loaderContainer}>
+      <img src={loaderIcon} className={styles.loader} alt="Loading..." />
+    </div>
   );
 };
 
