@@ -14,12 +14,15 @@ import iconInstDarkTheme from './img/instagram_darkTheme.png';
 import iconInstLightTheme from './img/instagram_lightTheme.png';
 import logoSWDarkTheme from './img/sw_dark_logo.png';
 import logoSWLightTheme from './img/sw_light_logo.png';
+import logoSmallSWLightTheme from './img/sw_small_light_logo.png';
+import logoSmallSWDarkTheme from './img/sw_small_dark_logo.png';
 import iconTikTokDarkTheme from './img/tiktok_darkTheme.png';
 import iconTikTokLightTheme from './img/tiktok_lightTheme.png';
 import iconTwitterDarkTheme from './img/twitter_darkTheme.png';
 import iconTwitterLightTheme from './img/twitter_lightTheme.png';
 import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
 import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
+import { useEffect, useState } from 'react';
 
 const getLinkClassNames = (isActive, theme) => {
   return classNames(styles.title, {
@@ -30,8 +33,11 @@ const getLinkClassNames = (isActive, theme) => {
   });
 };
 
-const Header = () => {
+const Header: React.FC = () => {
   const { theme } = useTheme();
+
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   const locationSignUp = useLocation();
   const locationLogIn = useLocation();
@@ -43,6 +49,26 @@ const Header = () => {
     (state: { favourites: { favoriteIds: string[] } }) =>
       state.favourites.favoriteIds
   );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const getLogoSrc = (): string => {
+    if (windowWidth <= 768) {
+      return theme === 'light' ? logoSmallSWLightTheme : logoSmallSWDarkTheme;
+    } else {
+      return theme === 'light' ? logoSWLightTheme : logoSWDarkTheme;
+    }
+  };
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header>
@@ -124,11 +150,11 @@ const Header = () => {
           </li>
         </ul>
         <img
-          src={theme === 'light' ? logoSWLightTheme : logoSWDarkTheme}
+          src={getLogoSrc()}
           className={styles.logo}
           alt="star-wars-logo"
-        ></img>
-        <div className={styles.auth_container}>
+        />
+        <div className={classNames(styles.auth_container, { [styles.hide]: windowWidth <= 768 })}>
           {!isLogInPage && (
             <NavLink
               to="/login"
@@ -157,7 +183,20 @@ const Header = () => {
         </div>
       </section>
       <section className={styles.navigation}>
-        <ul className={styles.navigation_list}>
+        <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+          <div
+            className={classNames(styles.bar, { [styles.open]: menuOpen })}
+          ></div>
+          <div
+            className={classNames(styles.bar, { [styles.open]: menuOpen })}
+          ></div>
+          <div
+            className={classNames(styles.bar, { [styles.open]: menuOpen })}
+          ></div>
+        </div>
+        <ul className={classNames(styles.navigation_list, {
+            [styles.open]: menuOpen,
+          })}>
           <li>
             <NavLink
               to="/"
@@ -210,6 +249,33 @@ const Header = () => {
             >
               404
             </NavLink>
+          </li>
+          <ul>
+            
+          </ul>
+          <li className={styles.authContainerMobile}>
+            {!isLogInPage && (
+              <NavLink
+                to="/login"
+                className={classNames(styles.auth, {
+                  [styles.authLight]: theme === 'light',
+                  [styles.authDark]: theme === 'dark',
+                })}
+              >
+                Log In
+              </NavLink>
+            )}
+            {!isSignupPage && (
+              <NavLink
+                to="/signup"
+                className={classNames(styles.auth, {
+                  [styles.authLight]: theme === 'light',
+                  [styles.authDark]: theme === 'dark',
+                })}
+              >
+                Sign Up
+              </NavLink>
+            )}
           </li>
         </ul>
         <div className={styles.themeToggleButton}>
