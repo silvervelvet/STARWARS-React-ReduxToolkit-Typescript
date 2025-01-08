@@ -12,10 +12,10 @@ interface PersonInfoProps {
 const PersonInfo: React.FC<PersonInfoProps> = ({ personInfo }) => {
   return (
     <section>
-      <ul className={styles.list__container}>
+      <ul>
         {personInfo.map(({ title, data }) => (
-          <li className={styles.list__item} key={title}>
-            <span className={styles.item__title}>{title}</span>: {data}
+          <li key={title}>
+            <span className={styles.item_title}>{title}</span>: {data}
           </li>
         ))}
       </ul>
