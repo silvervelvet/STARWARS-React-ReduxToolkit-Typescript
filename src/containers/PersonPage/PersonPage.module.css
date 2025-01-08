@@ -1,5 +1,5 @@
 .wrapper {
-  padding-top: 2rem;
+  padding: 2rem 3rem;
 }
 
 .person_card {
@@ -79,4 +79,18 @@
   font-weight: 600;
   background-color: transparent;
   color: var(--color-red-darkTheme);
+}
+
+@media (max-width: 768px) {
+  .person_content,
+  .person_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .linkBackLightButton,
+  .linkBackDarkButton {
+    margin-left: 5rem;
+  }
 }
