@@ -229,6 +229,10 @@ header {
     display: none;
   }
 
+  .auth {
+    font-size: 1.8rem;
+  }
+
   .logo {
     max-width: 70rem;
   }
