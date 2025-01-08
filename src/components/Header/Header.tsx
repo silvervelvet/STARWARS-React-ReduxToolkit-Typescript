@@ -1,6 +1,7 @@
 import LoginIcon from '@mui/icons-material/Login';
 import SearchIcon from '@mui/icons-material/Search';
 import classNames from 'classnames';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -14,15 +15,14 @@ import iconInstDarkTheme from './img/instagram_darkTheme.png';
 import iconInstLightTheme from './img/instagram_lightTheme.png';
 import logoSWDarkTheme from './img/sw_dark_logo.png';
 import logoSWLightTheme from './img/sw_light_logo.png';
-import logoSmallSWLightTheme from './img/sw_small_light_logo.png';
 import logoSmallSWDarkTheme from './img/sw_small_dark_logo.png';
+import logoSmallSWLightTheme from './img/sw_small_light_logo.png';
 import iconTikTokDarkTheme from './img/tiktok_darkTheme.png';
 import iconTikTokLightTheme from './img/tiktok_lightTheme.png';
 import iconTwitterDarkTheme from './img/twitter_darkTheme.png';
 import iconTwitterLightTheme from './img/twitter_lightTheme.png';
 import iconYoutubeDarkTheme from './img/youtube_darkTheme.png';
 import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
-import { useEffect, useState } from 'react';
 
 const getLinkClassNames = (isActive, theme) => {
   return classNames(styles.title, {
@@ -38,6 +38,8 @@ const Header: React.FC = () => {
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const menuRef = useRef<HTMLUListElement>(null);
+  const hamburgerMenuRef = useRef<HTMLDivElement>(null);
 
   const locationSignUp = useLocation();
   const locationLogIn = useLocation();
@@ -59,6 +61,25 @@ const Header: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        !hamburgerMenuRef.current?.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   const getLogoSrc = (): string => {
     if (windowWidth <= 768) {
@@ -149,41 +170,43 @@ const Header: React.FC = () => {
             </a>
           </li>
         </ul>
-        <img
-          src={getLogoSrc()}
-          className={styles.logo}
-          alt="star-wars-logo"
-        />
-        <div className={classNames(styles.auth_container, { [styles.hide]: windowWidth <= 768 })}>
-          {!isLogInPage && (
-            <NavLink
-              to="/login"
-              className={classNames(styles.auth, {
-                [styles.authLight]: theme === 'light',
-                [styles.authDark]: theme === 'dark',
-              })}
-            >
-              <div className={styles.auth_logIn_icon}>
-                <LoginIcon fontSize="large" />
-                <span> Log In</span>
-              </div>
-            </NavLink>
-          )}
-          {!isSignupPage && (
-            <NavLink
-              to="/signup"
-              className={classNames(styles.auth, {
-                [styles.authLight]: theme === 'light',
-                [styles.authDark]: theme === 'dark',
-              })}
-            >
-              Sign Up
-            </NavLink>
-          )}
-        </div>
+        <img src={getLogoSrc()} className={styles.logo} alt="star-wars-logo" />
+        {windowWidth > 768 && (
+          <div className={styles.auth_container}>
+            {!isLogInPage && (
+              <NavLink
+                to="/login"
+                className={classNames(styles.auth, {
+                  [styles.authLight]: theme === 'light',
+                  [styles.authDark]: theme === 'dark',
+                })}
+              >
+                <div className={styles.auth_logIn_icon}>
+                  <LoginIcon fontSize="large" />
+                  <span> Log In</span>
+                </div>
+              </NavLink>
+            )}
+            {!isSignupPage && (
+              <NavLink
+                to="/signup"
+                className={classNames(styles.auth, {
+                  [styles.authLight]: theme === 'light',
+                  [styles.authDark]: theme === 'dark',
+                })}
+              >
+                Sign Up
+              </NavLink>
+            )}
+          </div>
+        )}
       </section>
       <section className={styles.navigation}>
-        <div className={styles.hamburgerMenu} onClick={toggleMenu}>
+        <div
+          className={styles.hamburgerMenu}
+          onClick={toggleMenu}
+          ref={hamburgerMenuRef}
+        >
           <div
             className={classNames(styles.bar, { [styles.open]: menuOpen })}
           ></div>
@@ -194,9 +217,12 @@ const Header: React.FC = () => {
             className={classNames(styles.bar, { [styles.open]: menuOpen })}
           ></div>
         </div>
-        <ul className={classNames(styles.navigation_list, {
+        <ul
+          className={classNames(styles.navigation_list, {
             [styles.open]: menuOpen,
-          })}>
+          })}
+          ref={menuRef}
+        >
           <li>
             <NavLink
               to="/"
@@ -250,33 +276,35 @@ const Header: React.FC = () => {
               404
             </NavLink>
           </li>
-          <ul>
-            
-          </ul>
-          <li className={styles.authContainerMobile}>
-            {!isLogInPage && (
-              <NavLink
-                to="/login"
-                className={classNames(styles.auth, {
-                  [styles.authLight]: theme === 'light',
-                  [styles.authDark]: theme === 'dark',
-                })}
-              >
-                Log In
-              </NavLink>
-            )}
-            {!isSignupPage && (
-              <NavLink
-                to="/signup"
-                className={classNames(styles.auth, {
-                  [styles.authLight]: theme === 'light',
-                  [styles.authDark]: theme === 'dark',
-                })}
-              >
-                Sign Up
-              </NavLink>
-            )}
-          </li>
+          {windowWidth <= 768 && (
+            <>
+              {!isLogInPage && (
+                <NavLink
+                  to="/login"
+                  className={classNames(styles.auth, {
+                    [styles.authLight]: theme === 'light',
+                    [styles.authDark]: theme === 'dark',
+                  })}
+                >
+                  <div className={styles.auth_logIn_icon}>
+                    <LoginIcon fontSize="large" />
+                    <span> Log In</span>
+                  </div>
+                </NavLink>
+              )}
+              {!isSignupPage && (
+                <NavLink
+                  to="/signup"
+                  className={classNames(styles.auth, {
+                    [styles.authLight]: theme === 'light',
+                    [styles.authDark]: theme === 'dark',
+                  })}
+                >
+                  Sign Up
+                </NavLink>
+              )}
+            </>
+          )}
         </ul>
         <div className={styles.themeToggleButton}>
           <ThemeToggleButton />
