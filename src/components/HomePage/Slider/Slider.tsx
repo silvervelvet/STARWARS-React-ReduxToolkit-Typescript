@@ -45,7 +45,6 @@ const Slider: React.FC = () => {
       <div className={styles.slider_img_container}>
         <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
       </div>
-
       <div className={styles.content_container}>
         <img
           className={styles.sw_logo_container}
@@ -62,7 +61,6 @@ const Slider: React.FC = () => {
         >
           {btnContent[currentIndex]}
         </Link>
-
         {currentIndex === 0 && (
           <Link
             to={'btnLinks[currentIndex]'}
@@ -77,7 +75,6 @@ const Slider: React.FC = () => {
           </Link>
         )}
       </div>
-
       <button
         className={classNames(styles.action_button, styles.prev_button)}
         onClick={prevImage}
@@ -90,7 +87,6 @@ const Slider: React.FC = () => {
       >
         <img src={nextIconBtn} alt="arrow-right" />
       </button>
-
       <div className={styles.indicator_container}>
         {images.map((_, index) => (
           <span

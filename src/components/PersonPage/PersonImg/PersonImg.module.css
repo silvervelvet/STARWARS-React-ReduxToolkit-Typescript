@@ -23,3 +23,10 @@
   transform: scale(1.2);
   filter: drop-shadow(0 0 1rem #f39c12) drop-shadow(0 0 2rem #f39c12);
 }
+
+@media (max-width: 768px) {
+  .img_container {
+    position: relative;
+    margin: 0 auto;
+  }
+}

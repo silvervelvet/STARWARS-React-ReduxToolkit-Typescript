@@ -4,36 +4,50 @@
   overflow: hidden;
 }
 
+.slider_img_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider_img_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .content_container {
   position: absolute;
-  z-index: 2;
-  top: 10%;
+  top: 10rem;
   left: 10rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   max-width: 50rem;
+  padding: 0 2rem;
+  color: #fff;
+  z-index: 2;
 }
 
 .sw_logo_container {
-  max-width: 50rem;
+  max-width: 100%;
+  height: auto;
 }
 
 .title_content {
-  color: #fff;
   font-family: 'Nunito Sans', serif;
   font-weight: 400;
-  font-size: 3rem;
-  text-align: center;
+  font-size: 2.5rem;
 }
 
 .link_btn {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-  padding: 1rem 2rem;
-  max-width: 25rem;
-  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  max-width: 30rem;
+  border-radius: 5rem;
   transition: background-color 0.3s ease;
 }
 
@@ -56,7 +70,7 @@
 .extra_link_LightBtn {
   border: 2px solid var(--color-lightGreen-lightTheme);
 }
- 
+
 .extra_link_DarkBtn {
   border: 2px solid var(--color-red-darkTheme);
 }
@@ -67,11 +81,17 @@
   z-index: 2;
   top: 50%;
   transform: translateY(-50%);
+  max-width: 5rem;
+  max-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .action_button img {
-  max-width: 5rem;
-  max-height: 5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
@@ -81,11 +101,11 @@
 }
 
 .prev_button {
-  left: 10px;
+  left: 2rem;
 }
 
 .next_button {
-  right: 10px;
+  right: 2rem;
 }
 
 .indicator_container {
@@ -115,4 +135,82 @@
   background-color: var(--color-lightRed-darkTheme);
 }
 
+@media (max-width: 1024px) {
+  .slider_container {
+    height: 70vh;
+  }
 
+  .content_container {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .title_content {
+    font-size: 2.5rem;
+  }
+
+  .link_btn {
+    padding: 1rem 1.5rem;
+  }
+
+  .sw_logo_container {
+    max-width: 35rem;
+  }
+
+  .action_button img {
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+
+  .prev_button {
+    left: 2rem;
+  }
+
+  .next_button {
+    right: 2rem;
+  }
+
+  .indicator {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider_container {
+    height: 60vh;
+  }
+
+  .content_container {
+    left: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+
+  .title_content {
+    font-size: 2rem;
+  }
+
+  .link_btn {
+    padding: 1rem 1.5rem;
+    max-width: 70%;
+  }
+
+  .sw_logo_container {
+    max-width: 30rem;
+  }
+
+  .prev_button {
+    left: 5px;
+  }
+
+  .next_button {
+    right: 5px;
+  }
+
+  .indicator {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}

@@ -59,7 +59,6 @@ const LogInForm: React.FC = () => {
         <div className={styles.sign_message}>{successMessage}</div>
       )}
       {error && <div className={styles.sign_message}>{error}</div>}
-
       <Formik
         onSubmit={handleSubmit}
         initialValues={{ email: '', password: '' }}

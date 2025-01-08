@@ -95,14 +95,6 @@ header {
   width: 100%;
 }
 
-.navigation_list {
-  justify-content: center;
-  display: flex;
-  gap: 8rem;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
 .iconTextWrapper {
   display: flex;
   align-items: center;
@@ -154,3 +146,136 @@ header {
   background-color: var(--color-red-darkTheme);
 }
 
+.hamburgerMenu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.bar {
+  height: 4px;
+  background-color: #a9a9a9;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navigation_list {
+  display: flex;
+  gap: 8rem;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .top_header {
+    padding: 0rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1.6rem;
+  }
+
+  .social_media_list {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    max-width: 12rem;
+    margin: 0 auto;
+  }
+
+  .auth_container {
+    justify-content: center;
+  }
+
+  .auth {
+    font-size: 1.5rem;
+  }
+
+  .navigation {
+    padding: 0rem 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navigation_list {
+    gap: 4rem;
+    flex-wrap: nowrap;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .themeToggleButton {
+    margin-left: auto;
+  }
+
+  .favoriteCount {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top_header {
+    padding: 0rem 3rem;
+    grid-template-columns: 1fr;
+  }
+
+  .auth_container {
+    display: none;
+  }
+
+  .auth {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    max-width: 70rem;
+  }
+
+  .social_media_list {
+    display: none;
+  }
+
+  .hamburgerMenu {
+    display: flex;
+  }
+
+  .navigation_list {
+    display: none;
+  }
+
+  .navigation_list.open {
+    display: flex;
+    padding: 2rem 2rem 2rem 3rem;
+    position: absolute;
+    top: 9.3rem;
+    left: 0rem;
+    background-color: #333;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 2rem;
+    z-index: 99999;
+  }
+
+  .bar.open:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
+  }
+}

@@ -21,7 +21,7 @@ const SearchPageInfo: React.FC<SearchPageInfoProps> = ({ peopleSearch }) => {
   const { theme } = useTheme();
 
   return (
-    <>
+    <section>
       {hasResults ? (
         <ul className={styles.search_list}>
           {peopleSearch.map(({ id, name, img }) => (
@@ -50,7 +50,7 @@ const SearchPageInfo: React.FC<SearchPageInfoProps> = ({ peopleSearch }) => {
       ) : (
         <div className={styles.noResults} >No results</div>
       )}
-    </>
+    </section>
   );
 };
 
