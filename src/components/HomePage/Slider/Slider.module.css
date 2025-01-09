@@ -30,18 +30,16 @@
   z-index: 2;
 }
 
-.sw_logo_container {
+.sw_logo_img {
   max-width: 100%;
   height: auto;
 }
 
 .title_content {
-  font-family: 'Nunito Sans', serif;
-  font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
-.link_btn {
+.btn_link {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
@@ -51,31 +49,31 @@
   transition: background-color 0.3s ease;
 }
 
-.link_LightBtn {
+.btn_link_lightTheme {
   background-color: var(--color-green-lightTheme);
 }
 
-.link_DarkBtn {
+.btn_link_darkTheme {
   background-color: var(--color-red-darkTheme);
 }
 
-.link_LightBtn:hover, .extra_link_LightBtn:hover {
+.btn_link_lightTheme:hover, .extra_btn_link_lightTheme:hover {
   background-color: var(--color-lightGreen-lightTheme);
 }
 
-.link_DarkBtn:hover, .extra_link_DarkBtn:hover {
+.btn_link_darkTheme:hover, .extra_btn_link_darkTheme:hover {
   background-color: var(--color-lightRed-darkTheme);
 }
 
-.extra_link_LightBtn {
+.extra_btn_link_lightTheme {
   border: 2px solid var(--color-lightGreen-lightTheme);
 }
 
-.extra_link_DarkBtn {
+.extra_btn_link_darkTheme {
   border: 2px solid var(--color-red-darkTheme);
 }
 
-.action_button {
+.btn_action {
   background-color: transparent;
   position: absolute;
   z-index: 2;
@@ -88,7 +86,7 @@
   align-items: center;
 }
 
-.action_button img {
+.btn_action img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -96,15 +94,15 @@
   transition: opacity 0.3s ease;
 }
 
-.action_button:hover img {
+.btn_action:hover img {
   opacity: 1;
 }
 
-.prev_button {
+.btn_prev {
   left: 2rem;
 }
 
-.next_button {
+.btn_next {
   right: 2rem;
 }
 
@@ -127,11 +125,11 @@
   transition: background-color 0.3s ease;
 }
 
-.indicator.activeLight {
+.indicator.active_lightTheme {
   background-color: var(--color-lightGreen-lightTheme);
 }
 
-.indicator.activeDark {
+.indicator.active_darkTheme {
   background-color: var(--color-lightRed-darkTheme);
 }
 
@@ -145,28 +143,24 @@
     transform: translateY(-50%);
   }
 
-  .title_content {
-    font-size: 2.5rem;
-  }
-
-  .link_btn {
+  .btn_link {
     padding: 1rem 1.5rem;
   }
 
-  .sw_logo_container {
+  .sw_logo_img {
     max-width: 35rem;
   }
 
-  .action_button img {
+  .btn_action img {
     max-width: 4rem;
     max-height: 4rem;
   }
 
-  .prev_button {
+  .btn_prev {
     left: 2rem;
   }
 
-  .next_button {
+  .btn_next {
     right: 2rem;
   }
 
@@ -189,23 +183,23 @@
   }
 
   .title_content {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .link_btn {
+  .btn_link {
     padding: 1rem 1.5rem;
     max-width: 70%;
   }
 
-  .sw_logo_container {
+  .sw_logo_img {
     max-width: 30rem;
   }
 
-  .prev_button {
+  .btn_prev {
     left: 5px;
   }
 
-  .next_button {
+  .btn_next {
     right: 5px;
   }
 

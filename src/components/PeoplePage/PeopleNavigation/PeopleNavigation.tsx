@@ -19,7 +19,7 @@ const PeopleNavigation: React.FC<PeopleNavigationProps> = ({
   const { theme } = useTheme();
 
   return (
-    <div className={styles.button_container}>
+    <nav className={styles.btn_nav_container}>
       <UIButton
         text={'Previous'}
         onClick={onPrevious}
@@ -27,8 +27,8 @@ const PeopleNavigation: React.FC<PeopleNavigationProps> = ({
         theme={theme}
         classes={
           theme === 'light'
-            ? styles.peopleNavigationLightButton
-            : styles.peopleNavigationDarkButton
+            ? styles.btn_nav_lightTheme
+            : styles.btn_nav_darkTheme
         }
       />
       <UIButton
@@ -38,11 +38,11 @@ const PeopleNavigation: React.FC<PeopleNavigationProps> = ({
         theme={theme}
         classes={
           theme === 'light'
-            ? styles.peopleNavigationLightButton
-            : styles.peopleNavigationDarkButton
+            ? styles.btn_nav_lightTheme
+            : styles.btn_nav_darkTheme
         }
       />
-    </div>
+    </nav>
   );
 };
 

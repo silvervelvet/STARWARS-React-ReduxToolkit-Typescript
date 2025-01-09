@@ -2,12 +2,12 @@
   position: relative;
 }
 
-.personImage {
+.person_img {
   border-radius: 1rem;
   max-width: 25rem;
 }
 
-.iconFavorite {
+.icon_favorite {
   position: absolute;
   top: 0.7rem;
   right: 0.7rem;
@@ -19,7 +19,7 @@
   transition: transform 0.3s ease;
 }
 
-.iconFavorite:hover {
+.icon_favorite:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 1rem #f39c12) drop-shadow(0 0 2rem #f39c12);
 }

@@ -1,17 +1,17 @@
-.button_container {
+.btn_nav_container {
   display: flex;
   gap: 1rem;
 }
 
-.peopleNavigationLightButton:hover,
-.peopleNavigationLightButton:active {
+.btn_nav_lightTheme:hover,
+.btn_nav_lightTheme:active {
   color: #ffff;
   background-color: var(--color-lightGreen-lightTheme);
   border: none;
 }
 
-.peopleNavigationDarkButton:hover,
-.peopleNavigationDarkButton:active {
+.btn_nav_darkTheme:hover,
+.btn_nav_darkTheme:active {
   color: #ffff;
   background-color: var(--color-lightRed-darkTheme);
   border: none;

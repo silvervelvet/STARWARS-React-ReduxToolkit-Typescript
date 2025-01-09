@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.search_photo {
+.search_img {
   width: 15rem;
   height: 15rem;
   object-fit: cover;
@@ -27,17 +27,17 @@
   margin-bottom: 1rem;
 }
 
-.search_photoLight:hover {
+.search_img_lightTheme:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 0 0.8rem var(--color-lightGreen-lightTheme)) drop-shadow(0 0 0.8rem var(--color-lightGreen-lightTheme));
 }
 
-.search_photoDark:hover {
-  transform: scale(1.1);
+.search_img_darkTheme:hover {
+  transform: scale(1.05);
   filter: drop-shadow(0 0 0.8rem var(--color-lightRed-darkTheme)) drop-shadow(0 0 0.8rem var(--color-lightRed-darkTheme));
 }
 
-.searchName {
+.search_name {
   text-align: center;
   font-family: 'Nunito Sans', serif;
   font-weight: 400;
@@ -45,15 +45,15 @@
   transition: color 0.3s ease;
 }
 
-.searchNameLight {
+.search_name_lightTheme {
   color: var(--color-lightGreen-lightTheme);
 }
 
-.searchNameDark {
+.search_name_darkTheme {
   color: var(--color-lightRed-darkTheme);
 }
 
-.noResults {
+.no_results {
   font-size: 1.7rem;
   color: #a9a9a9;
   text-align: center;

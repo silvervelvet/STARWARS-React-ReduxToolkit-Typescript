@@ -25,21 +25,21 @@ const PersonFilms: React.FC<PersonFilmsProps> = ({ personFilms }) => {
   }, []);
 
   return (
-    <>
+    <section>
       <ul>
         {films
           .sort((a, b) => a.episode_id - b.episode_id)
           .map(({ title, episode_id }) => (
-            <li className={styles.list__item} key={episode_id}>
-              <span className={styles.item__episide}>
+            <li key={episode_id}>
+              <span className={styles.item_episide}>
                 Episode {episode_id}{' '}
               </span>
               <span> : </span>
-              <span className={styles.item__title}>{title}</span>
+              <span>{title}</span>
             </li>
           ))}
       </ul>
-    </>
+    </section>
   );
 };
 
