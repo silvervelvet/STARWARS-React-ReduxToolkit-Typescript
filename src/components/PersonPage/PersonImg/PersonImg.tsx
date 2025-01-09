@@ -30,11 +30,11 @@ const PersonImg: React.FC<PersonImgProps> = ({
 
   return (
     <section className={styles.img_container}>
-      <img className={styles.personImage} src={personImg} alt={personName} />
+      <img className={styles.person_img} src={personImg} alt={personName} />
       <img
         src={isFavourite ? iconFavoriteFill : iconFavorite}
         onClick={handleToggleFavourite}
-        className={styles.iconFavorite}
+        className={styles.icon_favorite}
         alt={isFavourite ? 'iconFavoriteFill' : 'iconFavorite'}
       />
     </section>

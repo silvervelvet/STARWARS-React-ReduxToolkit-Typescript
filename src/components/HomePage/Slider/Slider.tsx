@@ -47,7 +47,7 @@ const Slider: React.FC = () => {
       </div>
       <div className={styles.content_container}>
         <img
-          className={styles.sw_logo_container}
+          className={styles.sw_logo_img}
           src={sw_skeleton_crew}
           alt="sw_skeleton_crew-logo"
         />
@@ -55,8 +55,8 @@ const Slider: React.FC = () => {
         <Link
           to={'btnLinks[currentIndex]'}
           className={classNames(
-            styles.link_btn,
-            theme === 'light' ? styles.link_LightBtn : styles.link_DarkBtn
+            styles.btn_link,
+            theme === 'light' ? styles.btn_link_lightTheme : styles.btn_link_darkTheme
           )}
         >
           {btnContent[currentIndex]}
@@ -65,10 +65,10 @@ const Slider: React.FC = () => {
           <Link
             to={'btnLinks[currentIndex]'}
             className={classNames(
-              styles.link_btn,
+              styles.btn_link,
               theme === 'light'
-                ? styles.extra_link_LightBtn
-                : styles.extra_link_DarkBtn
+                ? styles.extra_btn_link_lightTheme
+                : styles.extra_btn_link_darkTheme
             )}
           >
             Episode guide
@@ -76,13 +76,13 @@ const Slider: React.FC = () => {
         )}
       </div>
       <button
-        className={classNames(styles.action_button, styles.prev_button)}
+        className={classNames(styles.btn_action, styles.btn_prev)}
         onClick={prevImage}
       >
         <img src={prevIconBtn} alt="arrow-left" />
       </button>
       <button
-        className={classNames(styles.action_button, styles.next_button)}
+        className={classNames(styles.btn_action, styles.btn_next)}
         onClick={nextImage}
       >
         <img src={nextIconBtn} alt="arrow-right" />
@@ -91,7 +91,7 @@ const Slider: React.FC = () => {
         {images.map((_, index) => (
           <span
             key={index}
-            className={`${styles.indicator} ${currentIndex === index ? (theme === 'light' ? styles.activeLight : theme === 'dark' ? styles.activeDark : '') : ''}`}
+            className={`${styles.indicator} ${currentIndex === index ? (theme === 'light' ? styles.active_lightTheme : theme === 'dark' ? styles.active_darkTheme : '') : ''}`}
           ></span>
         ))}
       </div>

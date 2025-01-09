@@ -26,10 +26,10 @@ import iconYoutubeLightTheme from './img/youtube_lightTheme.png';
 
 const getLinkClassNames = (isActive, theme) => {
   return classNames(styles.title, {
-    [styles.titleDark]: theme === 'dark',
-    [styles.titleLight]: theme === 'light',
-    [styles.titleLight_active]: isActive && theme === 'light',
-    [styles.titleDark_active]: isActive && theme === 'dark',
+    [styles.title_darkTheme]: theme === 'dark',
+    [styles.title_lightTheme]: theme === 'light',
+    [styles.title_lightTheme_active]: isActive && theme === 'light',
+    [styles.title_darkTheme_active]: isActive && theme === 'dark',
   });
 };
 
@@ -92,8 +92,8 @@ const Header: React.FC = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header>
-      <section className={styles.top_header}>
+    <header className={styles.header}>
+      <section className={styles.header_top}>
         <ul className={styles.social_media_list}>
           <li className={styles.social_media_item}>
             <a
@@ -177,13 +177,13 @@ const Header: React.FC = () => {
               <NavLink
                 to="/login"
                 className={classNames(styles.auth, {
-                  [styles.authLight]: theme === 'light',
-                  [styles.authDark]: theme === 'dark',
+                  [styles.auth_lightTheme]: theme === 'light',
+                  [styles.auth_darkTheme]: theme === 'dark',
                 })}
               >
-                <div className={styles.auth_logIn_icon}>
+                <div className={styles.auth_logIn}>
                   <LoginIcon fontSize="large" />
-                  <span> Log In</span>
+                  <span>Log In</span>
                 </div>
               </NavLink>
             )}
@@ -191,8 +191,8 @@ const Header: React.FC = () => {
               <NavLink
                 to="/signup"
                 className={classNames(styles.auth, {
-                  [styles.authLight]: theme === 'light',
-                  [styles.authDark]: theme === 'dark',
+                  [styles.auth_lightTheme]: theme === 'light',
+                  [styles.auth_darkTheme]: theme === 'dark',
                 })}
               >
                 Sign Up
@@ -201,9 +201,9 @@ const Header: React.FC = () => {
           </div>
         )}
       </section>
-      <section className={styles.navigation}>
+      <nav className={styles.navigation}>
         <div
-          className={styles.hamburgerMenu}
+          className={styles.hamburger_menu}
           onClick={toggleMenu}
           ref={hamburgerMenuRef}
         >
@@ -239,12 +239,12 @@ const Header: React.FC = () => {
               People
             </NavLink>
           </li>
-          <li className={styles.navigation_item}>
+          <li>
             <NavLink
               to="/search"
               className={({ isActive }) => getLinkClassNames(isActive, theme)}
             >
-              <div className={styles.iconTextWrapper}>
+              <div className={styles.navigation_search}>
                 <SearchIcon fontSize="large" />
                 <span>Search</span>
               </div>
@@ -258,9 +258,9 @@ const Header: React.FC = () => {
               Favourites
               {favouritePeople.length > 0 && (
                 <span
-                  className={classNames(styles.favoriteCount, {
-                    [styles.favoriteCount_lightTheme]: theme === 'light',
-                    [styles.favoriteCount_darkTheme]: theme === 'dark',
+                  className={classNames(styles.favorite_сount, {
+                    [styles.favorite_сount_lightTheme]: theme === 'light',
+                    [styles.favorite_сount_darkTheme]: theme === 'dark',
                   })}
                 >
                   {favouritePeople.length}
@@ -282,8 +282,8 @@ const Header: React.FC = () => {
                 <NavLink
                   to="/login"
                   className={classNames(styles.auth, {
-                    [styles.authLight]: theme === 'light',
-                    [styles.authDark]: theme === 'dark',
+                    [styles.auth_lightTheme]: theme === 'light',
+                    [styles.auth_darkTheme]: theme === 'dark',
                   })}
                 >
                   <div className={styles.auth_logIn_icon}>
@@ -296,8 +296,8 @@ const Header: React.FC = () => {
                 <NavLink
                   to="/signup"
                   className={classNames(styles.auth, {
-                    [styles.authLight]: theme === 'light',
-                    [styles.authDark]: theme === 'dark',
+                    [styles.auth_lightTheme]: theme === 'light',
+                    [styles.auth_darkTheme]: theme === 'dark',
                   })}
                 >
                   Sign Up
@@ -306,10 +306,10 @@ const Header: React.FC = () => {
             </>
           )}
         </ul>
-        <div className={styles.themeToggleButton}>
+        <div className={styles.btn_themeToggle}>
           <ThemeToggleButton />
         </div>
-      </section>
+      </nav>
     </header>
   );
 };

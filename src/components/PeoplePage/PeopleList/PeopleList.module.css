@@ -1,4 +1,4 @@
-.list_container {
+.people_list {
   display: flex;
   gap: 1rem;
   row-gap: 2rem;
@@ -8,13 +8,13 @@
   margin: 0;
 }
 
-.list_item {
+.people_item {
   cursor: pointer;
   width: 19rem;
   transition: transform 0.3s ease;
 }
 
-.list_item:hover {
+.people_item:hover {
   transform: scale(1.05);
 }
 
@@ -24,18 +24,18 @@
   object-fit: contain;
 }
 
-.personNameLight:hover, .personNameLight:focus {
+.person_name_lightTheme:hover,
+.person_name_lightTheme:focus {
   color: var(--color-green-lightTheme);
 }
 
-.personNameDark:hover, .personNameDark:focus{
+.person_name_darkTheme:hover,
+.person_name_darkTheme:focus{
   color: var(--color-red-darkTheme);
 }
 
-.personName {
+.person_name {
   color: #a9a9a9;
   text-align: center;
-  font-family: 'Nunito Sans', serif;
-  font-weight: 400;
   font-size: 1.5rem;
 }

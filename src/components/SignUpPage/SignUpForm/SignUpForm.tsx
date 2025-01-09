@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import classNames from 'classnames';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
@@ -12,7 +11,6 @@ import { auth } from '../../../firebaseConfig';
 import UIButton from '../../UI-Kit/UIButton/UIButton';
 
 import styles from './SignUpForm.module.css';
-
 
 interface FormikValues {
   email: string;
@@ -67,10 +65,10 @@ const SignUpForm: React.FC = () => {
   return (
     <section
       className={classNames(
-        styles.sign_form_wrapper,
+        styles.sign_form_container,
         theme === 'light'
-          ? styles.sign_form_wrapper_light
-          : styles.sign_form_wrapper_dark
+          ? styles.sign_form_container_lightTheme
+          : styles.sign_form_container_darkTheme
       )}
     >
       {successMessage && (
@@ -88,8 +86,8 @@ const SignUpForm: React.FC = () => {
               htmlFor="email"
               className={classNames(
                 theme === 'light'
-                  ? styles.label_form_light
-                  : styles.label_form_dark
+                  ? styles.label_form_lightTheme
+                  : styles.label_form_darkTheme
               )}
             >
               Email
@@ -101,8 +99,8 @@ const SignUpForm: React.FC = () => {
               className={classNames(
                 styles.field_form,
                 theme === 'light'
-                  ? styles.field_form_light
-                  : styles.field_form_dark
+                  ? styles.field_form_lightTheme
+                  : styles.field_form_darkTheme
               )}
               placeholder="Enter your email"
             />
@@ -117,8 +115,8 @@ const SignUpForm: React.FC = () => {
               htmlFor="password"
               className={classNames(
                 theme === 'light'
-                  ? styles.label_form_light
-                  : styles.label_form_dark
+                  ? styles.label_form_lightTheme
+                  : styles.label_form_darkTheme
               )}
             >
               Password
@@ -130,8 +128,8 @@ const SignUpForm: React.FC = () => {
               className={classNames(
                 styles.field_form,
                 theme === 'light'
-                  ? styles.field_form_light
-                  : styles.field_form_dark
+                  ? styles.field_form_lightTheme
+                  : styles.field_form_darkTheme
               )}
               placeholder="Enter your password"
             />
@@ -146,8 +144,8 @@ const SignUpForm: React.FC = () => {
               htmlFor="confirmPassword"
               className={classNames(
                 theme === 'light'
-                  ? styles.label_form_light
-                  : styles.label_form_dark
+                  ? styles.label_form_lightTheme
+                  : styles.label_form_darkTheme
               )}
             >
               Confirm your password
@@ -159,8 +157,8 @@ const SignUpForm: React.FC = () => {
               className={classNames(
                 styles.field_form,
                 theme === 'light'
-                  ? styles.field_form_light
-                  : styles.field_form_dark
+                  ? styles.field_form_lightTheme
+                  : styles.field_form_darkTheme
               )}
               placeholder="Confirm your password"
             />

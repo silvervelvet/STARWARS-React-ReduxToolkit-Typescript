@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import LogRocket from 'logrocket';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -49,10 +49,10 @@ const LogInForm: React.FC = () => {
   return (
     <section
       className={classNames(
-        styles.sign_form_wrapper,
+        styles.sign_form_container,
         theme === 'light'
-          ? styles.sign_form_wrapper_light
-          : styles.sign_form_wrapper_dark
+          ? styles.sign_form_container_lightTheme
+          : styles.sign_form_container_darkTheme
       )}
     >
       {successMessage && (
@@ -70,8 +70,8 @@ const LogInForm: React.FC = () => {
               htmlFor="email"
               className={classNames(
                 theme === 'light'
-                  ? styles.label_form_light
-                  : styles.label_form_dark
+                  ? styles.label_form_lightTheme
+                  : styles.label_form_darkTheme
               )}
             >
               Email
@@ -83,8 +83,8 @@ const LogInForm: React.FC = () => {
               className={classNames(
                 styles.field_form,
                 theme === 'light'
-                  ? styles.field_form_light
-                  : styles.field_form_dark
+                  ? styles.field_form_lightTheme
+                  : styles.field_form_darkTheme
               )}
               placeholder="Enter your email"
             />
@@ -99,8 +99,8 @@ const LogInForm: React.FC = () => {
               htmlFor="password"
               className={classNames(
                 theme === 'light'
-                  ? styles.label_form_light
-                  : styles.label_form_dark
+                  ? styles.label_form_lightTheme
+                  : styles.label_form_darkTheme
               )}
             >
               Password
@@ -112,8 +112,8 @@ const LogInForm: React.FC = () => {
               className={classNames(
                 styles.field_form,
                 theme === 'light'
-                  ? styles.field_form_light
-                  : styles.field_form_dark
+                  ? styles.field_form_lightTheme
+                  : styles.field_form_darkTheme
               )}
               placeholder="Enter your password"
             />

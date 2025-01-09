@@ -1,4 +1,4 @@
-.sign_form_wrapper {
+.sign_form_container {
   width: 100%;
   max-width: 70rem;
   margin: 0 auto;
@@ -9,11 +9,11 @@
   gap: 1rem;
 }
 
-.sign_form_wrapper_light {
+.sign_form_container_lightTheme {
   border: var(--color-lightGreen-lightTheme) 2px solid;
 }
 
-.sign_form_wrapper_dark {
+.sign_form_container_darkTheme {
   border: var(--color-red-darkTheme) 2px solid;
 }
 
@@ -34,12 +34,12 @@
   gap: 1rem;
 }
 
-.label_form_light {
+.label_form_lightTheme {
   color:var(--color-green-lightTheme);
   text-decoration: underline;
 }
 
-.label_form_dark{
+.label_form_darkTheme {
   color:var(--color-red-darkTheme);
   text-decoration: underline;
 }
@@ -48,11 +48,11 @@
   font-size: 1.5rem;
 }
 
-.field_form_light {
+.field_form_lightTheme {
   color: var(--color-lightGreen-lightTheme);
 }
 
-.field_form_dark {
+.field_form_darkTheme {
   color: var(--color-lightRed-darkTheme);
 }
 
