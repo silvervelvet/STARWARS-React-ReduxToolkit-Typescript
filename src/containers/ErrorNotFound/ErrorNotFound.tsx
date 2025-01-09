@@ -6,8 +6,10 @@ const ErrorNotFound = () => {
   const location = useLocation();
 
   return (
-    <section className={styles.wrapper_error}>
-      <div className={styles.title_error}>404 - Page Not Found. No match for {location.pathname}</div>
+    <section className={styles.error_container}>
+      <div className={styles.title_error}>
+        404 - Page Not Found. No match for {location.pathname}
+      </div>
     </section>
   );
 };

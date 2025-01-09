@@ -74,22 +74,24 @@ const SearchPage = () => {
     <section className={styles.search_container}>
       <div
         className={classNames(styles.search_title, {
-          [styles.search_title_LightTheme]: theme === 'light',
-          [styles.search_title_DarkTheme]: theme === 'dark',
+          [styles.search_title_lightTheme]: theme === 'light',
+          [styles.search_title_darkTheme]: theme === 'dark',
         })}
       >
         Search
       </div>
-      <div className={styles.form_wrapper}>
+      <div className={styles.form_container}>
         <input
-          className={cn(styles.input_wrapper, {
-            [styles.input_wrapper_LightTheme]: theme === 'light',
-            [styles.input_wrapper_DarkTheme]: theme === 'dark',
+          className={cn(styles.input_group, {
+            [styles.input_group_lightTheme]: theme === 'light',
+            [styles.input_group_darkTheme]: theme === 'dark',
           })}
           type="text"
           value={inputSearchValue}
           onChange={handleInputChange}
-          placeholder={!inputSearchValue && !isFocused ? "Input character's name" : ''}
+          placeholder={
+            !inputSearchValue && !isFocused ? "Input character's name" : ''
+          }
           onFocus={handleFocus}
           onBlur={handleBlur}
         />

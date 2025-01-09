@@ -5,14 +5,14 @@
   min-height: 100vh;
 }
 
-.mainContent {
+.main_content {
   flex-grow: 1;
 }
 
-.border_bottomDark {
+.border_bottom_darkTheme {
   border-bottom: 1px solid #fff;
 }
 
-.border_bottomLight {
+.border_bottom_lightTheme {
   border-bottom: 1px solid #000;
 }
