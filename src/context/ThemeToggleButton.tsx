@@ -7,14 +7,12 @@ const ThemeToggleButton: React.FC = () => {
   const { theme, toggleTheme } = useTheme()!;
 
   return (
-    <section>
+    <button onClick={toggleTheme} className={styles.icon_btn_toggleTheme}>
       <img
-        className={styles.icon_toggleTheme}
         src={theme === 'light' ? iconLightTheme : iconDarkTheme}
-        onClick={toggleTheme}
         alt="side-variant"
       />
-    </section>
+    </button>
   );
 };
 
