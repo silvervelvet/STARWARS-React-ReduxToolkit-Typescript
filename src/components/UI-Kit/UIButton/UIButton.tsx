@@ -20,16 +20,14 @@ const UIButton: React.FC<UIButtonProps> = ({
   type = 'button',
 }) => {
   return (
-    <>
       <button
         type={type}
-        className={cn(styles.button, styles[theme], classes)}
+        className={cn(styles.btn, styles[theme], classes)}
         onClick={onClick}
         disabled={disabled}
       >
         {text}
       </button>
-    </>
   );
 };
 

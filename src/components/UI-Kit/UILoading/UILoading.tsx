@@ -26,7 +26,7 @@ const UILoading = () => {
   }, [theme]);
 
   return (
-    <div className={styles.loaderContainer}>
+    <div className={styles.loader_container}>
       <img src={loaderIcon} className={styles.loader} alt="Loading..." />
     </div>
   );

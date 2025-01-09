@@ -60,7 +60,7 @@ const PeoplePage: React.FC = () => {
   };
 
   return (
-    <section className={styles.peopleContainer}>
+    <section className={styles.people_container}>
       <PeopleNavigation
         onPrevious={() => switchPage(prevPage)}
         onNext={() => switchPage(nextPage)}

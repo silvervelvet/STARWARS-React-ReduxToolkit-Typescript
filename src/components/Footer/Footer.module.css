@@ -1,4 +1,4 @@
-.wrapper_footer {
+.footer {
   padding: 1rem 10rem 0.2rem;
   display: flex;
   flex-wrap: wrap;
@@ -8,13 +8,13 @@
   margin-top: auto;
 }
 
-.title_footer {
+.title {
   color: #a9a9a9;
   font-size: 1.3rem;
   text-align: center;
 }
 
-.list_footer {
+.footer_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -22,20 +22,20 @@
   text-align: center;
 }
 
-.link_footer {
+.footer_link {
   color: #a9a9a9;
   font-size: 1.2rem;
   text-decoration: underline;
 }
 
 @media (max-width: 992px) {
-  .wrapper_footer {
+  .footer {
     padding: 1rem 5rem 0.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .wrapper_footer {
+  .footer {
     padding: 1rem 3rem 0.2rem;
   }
 }

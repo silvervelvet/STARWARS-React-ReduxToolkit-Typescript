@@ -28,17 +28,17 @@ const SearchPageInfo: React.FC<SearchPageInfoProps> = ({ peopleSearch }) => {
             <li className={styles.search_item} key={id}>
               <Link to={`/people/${id}`}>
                 <img
-                  className={cn(styles.search_photo, {
-                    [styles.search_photoLight]: theme === 'light',
-                    [styles.search_photoDark]: theme === 'dark',
+                  className={cn(styles.search_img, {
+                    [styles.search_img_lightTheme]: theme === 'light',
+                    [styles.search_img_darkTheme]: theme === 'dark',
                   })}
                   src={img}
                   alt={name}
                 />
                 <div
-                  className={cn(styles.searchName, {
-                    [styles.searchNameLight]: theme === 'light',
-                    [styles.searchNameDark]: theme === 'dark',
+                  className={cn(styles.search_name, {
+                    [styles.search_name_lightTheme]: theme === 'light',
+                    [styles.search_name_darkTheme]: theme === 'dark',
                   })}
                 >
                   {name}
@@ -48,7 +48,7 @@ const SearchPageInfo: React.FC<SearchPageInfoProps> = ({ peopleSearch }) => {
           ))}
         </ul>
       ) : (
-        <div className={styles.noResults} >No results</div>
+        <div className={styles.no_results} >No results</div>
       )}
     </section>
   );

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useEffect, useState , Suspense } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import PersonImg from '../../components/PersonPage/PersonImg';
@@ -12,7 +12,6 @@ import { getPeopleImage } from '../../services/getPeopleData';
 import { getApiRequest, PersonApiResponse } from '../../utils/networkRequest';
 
 import styles from './PersonPage.module.css';
-
 
 const PersonFilms = React.lazy(
   () => import('../../components/PersonPage/PersonFilms')
@@ -77,7 +76,7 @@ const PersonPage: React.FC = () => {
   };
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.person_container}>
       <UIButton
         text={'Go back'}
         onClick={handleGoBack}
@@ -85,20 +84,20 @@ const PersonPage: React.FC = () => {
         theme={theme}
         classes={
           theme === 'light'
-            ? styles.linkBackLightButton
-            : styles.linkBackDarkButton
+            ? styles.btn_back_lightTheme
+            : styles.btn_back_darkTheme
         }
       />
       <main
         className={classNames(styles.person_card, {
-          [styles.person_cardLightTheme]: theme === 'light',
-          [styles.person_cardDarkTheme]: theme === 'dark',
+          [styles.person_card_lightTheme]: theme === 'light',
+          [styles.person_card_darkTheme]: theme === 'dark',
         })}
       >
         <div
           className={classNames(styles.title_person, {
-            [styles.title_personLightTheme]: theme === 'light',
-            [styles.title_personDarkTheme]: theme === 'dark',
+            [styles.title_person_lightTheme]: theme === 'light',
+            [styles.title_person_darkTheme]: theme === 'dark',
           })}
         >
           {personName}

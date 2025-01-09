@@ -1,4 +1,4 @@
-.wrapper {
+.person_container {
   padding: 2rem 3rem;
 }
 
@@ -15,12 +15,12 @@
   position: relative;
 }
 
-.person_cardLightTheme {
+.person_card_lightTheme {
   border: var(--color-lightGreen-lightTheme) solid 2px;
   border-radius: 1rem;
 }
 
-.person_cardDarkTheme {
+.person_card_darkTheme {
   border: var(--color-red-darkTheme) solid 2px;
   border-radius: 1rem;
 }
@@ -48,16 +48,16 @@
   font-size: 2rem;
 }
 
-.title_personLightTheme {
+.title_person_lightTheme {
   color: var(--color-green-lightTheme);
 }
 
-.title_personDarkTheme {
+.title_person_darkTheme {
   color: var(--color-red-darkTheme);
 }
 
-.linkBackLightButton,
-.linkBackDarkButton {
+.btn_back_lightTheme,
+.btn_back_darkTheme {
   margin-left: 10rem;
   padding: 0;
   width: auto;
@@ -67,15 +67,15 @@
   border: none;
 }
 
-.linkBackLightButton:hover,
-.linkBackLightButton:active {
+.btn_back_lightTheme:hover,
+.btn_back_lightTheme:active {
   font-weight: 600;
   background-color: white;
   color: var(--color-green-lightTheme);
 }
 
-.linkBackDarkButton:hover,
-.linkBackDarkButton:active {
+.btn_back_darkTheme:hover,
+.btn_back_darkTheme:active {
   font-weight: 600;
   background-color: transparent;
   color: var(--color-red-darkTheme);
@@ -89,8 +89,8 @@
     justify-content: center;
   }
 
-  .linkBackLightButton,
-  .linkBackDarkButton {
+  .btn_back_lightTheme,
+  .btn_back_darkTheme {
     margin-left: 5rem;
   }
 }

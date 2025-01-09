@@ -1,10 +1,10 @@
-header {
+.header {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.top_header {
+.header_top {
   padding: 0rem 10rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -40,7 +40,8 @@ header {
   transition: transform 0.3s ease;
 }
 
-.social_media_link:hover .social_media_img {
+.social_media_link:hover
+.social_media_img {
   transform: scale(1.2);
 }
 
@@ -64,23 +65,23 @@ header {
   transition: transform 0.3s ease;
 }
 
-.authLight {
+.auth_lightTheme {
   color: var(--color-lightGreen-lightTheme);
 }
 
-.authDark {
+.auth_darkTheme {
   color: var(--color-lightRed-darkTheme);
 }
 
-.authLight:hover {
+.auth_lightTheme:hover {
   transform: scale(1.05);
 }
 
-.authDark:hover {
+.auth_darkTheme:hover {
   transform: scale(1.05);
 }
 
-.auth_logIn_icon {
+.auth_logIn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +96,7 @@ header {
   width: 100%;
 }
 
-.iconTextWrapper {
+.navigation_search {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -108,23 +109,23 @@ header {
   color: #a9a9a9;
 }
 
-.titleLight:hover, .titleLight:focus, .titleLight_active {
+.title_lightTheme:hover,
+.title_lightTheme:focus,
+.title_lightTheme_active {
   color: var(--color-green-lightTheme);
 }
 
-.titleDark:hover, .titleDark:focus, .titleDark_active {
+.title_darkTheme:hover,
+.title_darkTheme:focus,
+.title_darkTheme_active {
   color: var(--color-red-darkTheme);
 }
 
-.themeToggleButton {
+.btn_themeToggle {
   margin-left: auto;
 }
 
-.log {
-  justify-self: end;
-}
-
-.favoriteCount {
+.favorite_сount {
   margin-left: 1rem;
   border-radius: 50%;
   padding: 0.4rem;
@@ -138,15 +139,15 @@ header {
   padding-top: 0.1rem;
 }
 
-.favoriteCount_lightTheme {
+.favorite_сount_lightTheme {
   background-color: var(--color-lightGreen-lightTheme);
 }
 
-.favoriteCount_darkTheme {
+.favorite_сount_darkTheme {
   background-color: var(--color-red-darkTheme);
 }
 
-.hamburgerMenu {
+.hamburger_menu {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -171,7 +172,7 @@ header {
 }
 
 @media (max-width: 992px) {
-  .top_header {
+  .header_top {
     padding: 0rem 3rem;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -210,17 +211,17 @@ header {
     font-size: 1.8rem;
   }
 
-  .themeToggleButton {
+  .btn_themeToggle {
     margin-left: auto;
   }
 
-  .favoriteCount {
+  .favorite_сount {
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 768px) {
-  .top_header {
+  .header_top {
     padding: 0rem 3rem;
     grid-template-columns: 1fr;
   }
@@ -241,7 +242,7 @@ header {
     display: none;
   }
 
-  .hamburgerMenu {
+  .hamburger_menu {
     display: flex;
   }
 
@@ -261,6 +262,12 @@ header {
     align-items:flex-start;
     gap: 2rem;
     z-index: 99999;
+  }
+
+  .auth_logIn_icon {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem
   }
 
   .bar.open:nth-child(1) {

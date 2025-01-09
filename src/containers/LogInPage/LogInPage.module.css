@@ -1,4 +1,4 @@
-.login_wrapper {
+.login_container {
   padding: 1rem 10rem;
   display: flex;
   flex-direction: column;
@@ -7,15 +7,15 @@
 
 .login_title {
   font-family: 'Nunito Sans', serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 2rem;
   text-align: center;
 }
 
-.login_title_Light {
+.login_title_lightTheme {
   color: var(--color-green-lightTheme);
 }
 
-.login_title_Dark {
+.login_title_darkTheme {
   color: var(--color-red-darkTheme);
 }
