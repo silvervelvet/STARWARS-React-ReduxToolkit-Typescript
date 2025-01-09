@@ -81,11 +81,11 @@ const FavouritePage: React.FC = () => {
     }));
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.favourite_container}>
       <div
-        className={classNames(styles.title, {
-          [styles.title_LightTheme]: theme === 'light',
-          [styles.title_DarkTheme]: theme === 'dark',
+        className={classNames(styles.favourite_title, {
+          [styles.favourite_title_lightTheme]: theme === 'light',
+          [styles.favourite_title_darkTheme]: theme === 'dark',
         })}
       >
         Favourites

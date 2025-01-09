@@ -1,4 +1,4 @@
-.login_wrapper {
+.login_container {
   padding: 1rem 10rem;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,10 @@
   text-align: center;
 }
 
-.login_title_Light {
+.login_title_lightTheme {
   color: var(--color-green-lightTheme);
 }
 
-.login_title_Dark {
+.login_title_darkTheme {
   color: var(--color-red-darkTheme);
 }

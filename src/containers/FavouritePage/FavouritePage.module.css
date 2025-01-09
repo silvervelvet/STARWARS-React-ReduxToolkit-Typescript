@@ -1,25 +1,25 @@
-.wrapper {
+.favourite_container {
   padding: 1rem 10rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.title, .no_favorites_title {
+.favourite_title, .no_favorites_title {
   font-family: 'Nunito Sans', serif;
   font-weight: 400;
   font-size: 2rem;
 }
 
-.title {
+.favourite_title {
   text-transform: uppercase;
 }
 
-.title_LightTheme {
+.favourite_title_lightTheme {
   color: var(--color-green-lightTheme);
 }
 
-.title_DarkTheme {
+.favourite_title_darkTheme {
   color: var(--color-red-darkTheme);
 }
 

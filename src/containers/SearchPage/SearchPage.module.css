@@ -12,36 +12,36 @@
   text-transform: uppercase;
 }
 
-.search_title_LightTheme {
+.search_title_lightTheme {
   color: var(--color-green-lightTheme);
 }
 
-.search_title_DarkTheme {
+.search_title_darkTheme {
   color: var(--color-red-darkTheme);
 }
 
-.form_wrapper {
+.form_container {
   position: relative;
   display: inline-flex;
 }
 
-.input_wrapper {
+.input_group {
   min-width: 30rem;
   padding: 10px 15px;
   border-radius: 1.5rem;
   transition: transform 0.3s ease;
 }
 
-.input_wrapper:focus {
+.input_group:focus {
   transform: scale(1.05);
 }
 
-.input_wrapper_LightTheme {
+.input_group_lightTheme {
   border: var(--color-green-lightTheme) solid 1px;
   color: var(--color-green-lightTheme);
 }
 
-.input_wrapper_DarkTheme {
+.input_group_darkTheme {
   border: var(--color-red-darkTheme) solid 1px;
   color: var(--color-red-darkTheme);
 }

@@ -9,15 +9,17 @@ const SignUpPage = () => {
   const { theme } = useTheme();
 
   return (
-    <section className={styles.sign_wrapper}>
-      <div
+    <section className={styles.sign_container}>
+      <p
         className={classNames(
           styles.sign_title,
-          theme === 'light' ? styles.sign_title_Light : styles.sign_title_Dark
+          theme === 'light'
+            ? styles.sign_title_lightTheme
+            : styles.sign_title_darkTheme
         )}
       >
         Sign Up to Begin Your Journey to the Dark Side or the Force!
-      </div>
+      </p>
       <SignUpForm />
     </section>
   );
