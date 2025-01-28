@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Star Wars Universe Project \U00002B50
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **Star Wars** themed web application, built with modern web technologies and tools. It's designed to offer an interactive and dynamic user experience based on the Star Wars universe. \U0001F680 
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app is deployed on **GitHub Pages**. You can visit the live version of the project at:  
+[https://silvervelvet.github.io/STARWARS-React-ReduxToolkit-Typescript/](https://silvervelvet.github.io/STARWARS-React-ReduxToolkit-Typescript/) \U00002B50
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Vite** for fast build and development.
+- **React** with **TypeScript** for building reusable UI components.
+- **Redux Toolkit** for state management.
+- **ESLint** and **Prettier** for maintaining code quality and consistency.
 
-- Configure the top-level `parserOptions` property like this:
+## Features \U00002728
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **User Authentication**: Implemented **LogIn** and **SignUp** pages using **Formik**, with form validation powered by **Yup**. Secure authentication via **Firebase Authentication**. \U0001F510
+- **Search Functionality**: A search form with **debounce** functionality using **Lodash** to limit request frequency. \U0001F50D
+- **Routing**: Integrated **React Router** for smooth navigation across pages.
+- **Lazy Loading**: Applied **React.lazy** for lazy loading of components, paired with a UI preloader for better performance.
+- **Data Fetching**: Used the **Fetch API** to retrieve data from external sources.
+- **LocalStorage**: Utilized **LocalStorage** to save and retrieve browser data, ensuring persistence across sessions.
+- **Theme Switching**: Implemented **Context API** for switching between light and dark modes, with dynamic content and styles. \U0001F31E \U0001F319
+- **UI Kit**: Developed a custom **UI Kit** for a consistent and efficient interface creation process.
+- **MUI & Classnames**: Used **Material-UI (MUI)** for layout and styling, along with **classnames** for dynamic class management.
+- **Responsive Design**: Designed the application to be fully responsive, with a custom-built slider and burger menu for mobile-friendly layouts.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To run the project locally, clone this repository and follow the steps below:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/silvervelvet/STARWARS-React-ReduxToolkit-Typescript
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
