@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format:fix": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
